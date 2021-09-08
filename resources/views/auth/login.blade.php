@@ -7,19 +7,7 @@
 <!--@endsection-->
 <link href="{{asset('new/toastr/toastr.min.css')}}" rel="stylesheet" type="text/css">
 @section("content")
-<style>
-    p.dayText.secText {
-    left: 17px !important;
-}
-p.dayText.minText {
-    left: 20px !important;
-}
-#header .nav .active a {
-    color: #BC985F;
-    border-radius: 5px;
-    margin-top: -9px !important;
-}
-</style>
+
 <div class="login">
     <div class="container">
         <div class="row">
@@ -43,37 +31,37 @@ p.dayText.minText {
                         <div class="col-lg-6">
                             <div class="box">
                                 {{-- <h1>{{ trans('panel.site_title') }}</h1> --}}
-                
+
                                 {{-- <p class="text-muted">{{ trans('global.login') }}</p> --}}
                                 @if(session('message'))
                                     <div class="alert alert-info" role="alert">
                                         {{ session('message') }}
                                     </div>
                                 @endif
-                
+
                                 <form method="post" action="{{ route('login') }}">
                                     @csrf
                                     <div class="form-group">
                                         {{-- <input class="inputCommon" type="email" placeholder="Email Address"> --}}
                                         <input id="email" name="email" type="email" class="inputCommon{{ $errors->has('email') ? ' is-invalid' : '' }}" required autocomplete="email" autofocus placeholder="Email" value="{{ old('email', null) }}">
-                
+
                                         @if ($errors->has('email'))
                                         <span class="helper-text" data-error="wrong" data-success="right">
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
-                
+
                                     </div><!-- /.form-group -->
                                     <div class="form-group">
                                         {{-- <input class="inputCommon" type="password" placeholder="Password"> --}}
                                         <input id="password" name="password" type="password" class="inputCommon{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="Enter Password">
-                
+
                                         @if ($errors->has('password'))
                                     <span class="helper-text" data-error="wrong" data-success="right">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
-                                    
+
                                     </div><!-- /.form-group -->
                                     {{-- <div class="remeberBox">
                                         <div class="form-group">
@@ -112,21 +100,21 @@ p.dayText.minText {
                                             </a> --}}
                                         </div>
                                     </div>
-                                    
+
                                 </form>
                                 {{-- <div class="row">
                                     <div class="col-lg-12">
                                         <div class="utf-social-login-separator-item"><span>or</span></div>
                                     </div>
                                 </div> --}}
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
 <script src="{{asset('new/assets/js/app.js')}}"></script>

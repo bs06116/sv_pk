@@ -1737,7 +1737,7 @@ label.clearText a {
 
 .propertyListDiv .propertyImage .property-type {
     position: absolute;
-    
+
     top: 20px;
     background: #fff;
     color: #21293a;
@@ -1914,7 +1914,7 @@ label.clearText a {
 }
 
 .simple-sidebar .list-unstyled {
-    
+
     margin: 12px;
     padding: 0;
     text-align: left;
@@ -1922,7 +1922,7 @@ label.clearText a {
 }
 
 .simple-sidebar .list-unstyled li {
-    
+
     margin-bottom: 22px;
     border-bottom: dashed 1px #ededed;
 }
@@ -3015,6 +3015,14 @@ form.estate {
     color: #1b1a2f;
 }
 
-color: #1b1a2f;
-
+p.dayText.secText {
+    left: 17px !important;
+}
+p.dayText.minText {
+    left: 20px !important;
+}
+#header .nav .active a {
+    color: #BC985F;
+    border-radius: 5px;
+    margin-top: -9px !important;
 }
