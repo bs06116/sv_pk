@@ -52,7 +52,7 @@
     
     * {
         outline: none !important;
-        background-image: url(../img/footer-bg.png);
+      
     }
     
     a:hover {
@@ -3079,7 +3079,7 @@
     }
     
     body.fixed-left .side-menu.left {
-        background-image: url(../img/footer-bg.png);
+      
         bottom: 50px;
         height: 100%;
         margin-bottom: -70px;
@@ -3090,7 +3090,7 @@
     }
     
     .content-page {
-        background-image: url(../assets/img/footer-bg.png);
+		background-image: none !important;
         margin-left: 240px;
         overflow: hidden;
         min-height: 100vh
@@ -3167,7 +3167,7 @@
     }
     
     .slimScrollDiv {
-        background-image: url(../assets/img/footer-bg.png);
+		background-image: none !important;
     }
     
     #sidebar-menu .badge {
