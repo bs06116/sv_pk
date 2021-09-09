@@ -81,7 +81,7 @@
                                 <div class="inputSpan">
                                 <i class="fa fa-venus-mars" aria-hidden="true"></i>
                                 <select class="custom-select form-control decor"name="gender">
-                                    <option name="subject" selected disabled>Gender</option>
+                                    <option name="subject" selected disabled value="" >Gender</option>
                                     <option name="subject"value="male">Male</option>
                                     <option name="subject" value="female">Female</option>
                                 </select>
@@ -91,7 +91,7 @@
                                 <div class="inputSpan">
                                 <i class="fa fa-venus-mars" aria-hidden="true"></i> 
                                 <select class="custom-select form-control decor"name="status">
-                                    <option name="subject" selected disabled>Status</option>
+                                    <option name="subject" selected disabled value="" >Status</option>
                                     <option name="subject"value="male">Married</option>
                                     <option name="subject" value="female">Single</option>
                                 </select>
@@ -126,8 +126,8 @@
                             <div class="col-lg-6 mt-21">
                                 <div class="inputSpan">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
-                                <select class="custom-select form-control decor" id="intrested_dropdown" name="intrested_in">
-                                    <option name="subject" selected disabled>Intrested In</option>
+                                <select class="custom-select form-control decor" id="intrested_dropdown" name="intrested_in" required>
+                                    <option name="subject" selected disabled value="" >Intrested In</option>
                                     <option name="subject" value="house">House</option>
                                     <option name="subject" value="plot">Plot</option>
                                     <option name="subject" value="commercial">Commercial</option>
@@ -145,7 +145,7 @@
                                 <div class="inputSpan Intrested-more-field" id="plot" style="display:none;"> 
                                   <i class="fa fa-area-chart" aria-hidden="true"></i>      
                                    <select class="custom-select form-control decor"name="plot">
-                                        <option name="subject" selected disabled>Plot</option>
+                                        <option name="subject" selected disabled value="" >Plot</option>
                                         <option name="subject"value="03">03</option>
                                         <option name="subject"value="04">04</option>
                                         <option name="subject" value="20">20</option>
@@ -184,20 +184,20 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-21">
-                                <div class="inputSpan Intrested-more-field" id="down_payment">   
+                                <div class="inputSpan" id="down_payment">   
                                     <i class="fa fa-handshake-o" style="font-size:12px;" aria-hidden="true"></i>
-                                    <select class="custom-select form-control decor"name="down_payment">
-                                        <option name="subject" selected disabled>Down payment</option>
+                                    <select class="custom-select form-control decor"name="down_payment" required>
+                                        <option name="subject" selected disabled value="" >Down payment</option>
                                     </select>
                                 </div>
                             </div> 
                             <div class="col-lg-6 mt-21">
-                                <div class="inputSpan Intrested-more-field" id="monthly_installment">   
+                                <div class="inputSpan" id="monthly_installment">   
                                     <i class="fa fa-money" aria-hidden="true"></i>        
-                                    <select class="custom-select form-control decor"name="monthly_installment">
-                                        <option name="subject" selected disabled>Monthly Installment</option>
-                                        <option name="subject">5000</option>
-                                        <option name="subject">10000</option>
+                                    <select class="custom-select form-control decor" name="monthly_installment" required>
+                                        <option name="subject" selected disabled value="" >Monthly Installment</option>
+                                        <option name="subject" value="5000">5000</option>
+                                        <option name="subject" VALUE="10000">10000</option>
                                     </select>
                                 </div>
                             </div> 
@@ -229,7 +229,7 @@
             })
             for(let i=0; i<50; i++){
                 let key = parseInt(i) + parseInt(1)
-                $('#down_payment select').append('<option>'+key+"%"+'</option>')
+                $('#down_payment select').append('<option value='+key+'>'+key+"%"+'</option>')
             }
             $('input[name="accept_terms_condition"]').change(function(){
                 if($(this).prop('checked')==true){
