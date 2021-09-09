@@ -15,6 +15,13 @@
 .mt-21{
     margin-top:21px;
 }
+.mb-5{
+    margin-bottom:25px;
+}
+.form-heading{
+    font-size:20px;
+    font-weight:600;
+}
 </style>
 @extends('layouts.header')
 @section('title')
@@ -48,13 +55,14 @@
            <div class="row">
                <div class="col-lg-8 mx-auto">
                    <div class="rightDiv">
+                   <h5 class="mb-5 form-heading">Aplication Form plots and house</h5>
                     <form class="" method="post" action="{{url('application_form_submit')}}">
                         @csrf
     
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="inputSpan">
-                                    <input name="username" type="text" required class="form-control" placeholder="Name" >
+                                    <input name="name" type="text" required class="form-control" placeholder="Name" >
                                 </div>
 
                             </div>
@@ -81,8 +89,8 @@
                                     <!--<label for="pakage" class="col-form-label" name="pakage">Pakage</label>                 -->
                                 <select class="custom-select form-control decor"name="status">
                                     <option name="subject" selected disabled>Status</option>
-                                    <option name="subject"value="male">Male</option>
-                                    <option name="subject" value="female">Female</option>
+                                    <option name="subject"value="male">Married</option>
+                                    <option name="subject" value="female">Single</option>
                                 </select>
                                 </div>
                             </div>
@@ -90,7 +98,7 @@
                         <div class="row">
                             <div class="col-lg-6 mt-21">
                                 <div class="inputSpan">
-                                    <input name="phone_num" type="number" class="form-control" required placeholder="CNIC(optional)">
+                                    <input name="cnic" type="number" class="form-control" required placeholder="CNIC(optional)">
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-21">
@@ -100,12 +108,12 @@
                             </div>
                             <div class="col-lg-6 mt-21">
                                 <div class="inputSpan">
-                                    <input name="phone_num" type="number" class="form-control" required placeholder="Mobile">
+                                    <input name="Mobile" type="number" class="form-control" required placeholder="Mobile">
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-21">
                                 <div class="inputSpan">
-                                    <input name="phone_num" type="text" class="form-control" required placeholder="Profession">
+                                    <input name="profession" type="text" class="form-control" required placeholder="Profession">
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-21">
@@ -163,6 +171,8 @@
                                 <div class="inputSpan Intrested-more-field" id="monthly_installment">       
                                     <select class="custom-select form-control decor"name="monthly_installment">
                                         <option name="subject" selected disabled>Monthly Installment</option>
+                                        <option name="subject">5000</option>
+                                        <option name="subject">10000</option>
                                     </select>
                                 </div>
                             </div> 
@@ -174,7 +184,7 @@
                         </div>   
                         <div class="row mt-30">
                             <div class="col-lg-12">
-                                <button class="formSubmitBtn">Submit</button>
+                                <button class="formSubmitBtn" type="submit" disabled>Submit</button>
                             </div>
                         </div>
                         </form>
@@ -192,8 +202,16 @@
                $('.Intrested-more-field input').val("");
                $('#'+e.target.value).show();
             })
-            $('form').onsubmiut(()=>{
-                return true;
+            for(let i=0; i<50; i++){
+                let key = parseInt(i) + parseInt(1)
+                $('#down_payment select').append('<option>'+key+"%"+'</option>')
+            }
+            $('input[name="accept_terms_condition"]').change(function(){
+                if($(this).prop('checked')==true){
+                    $('.formSubmitBtn').prop('disabled',false);
+                }else{
+                    $('.formSubmitBtn').prop('disabled',true);
+                }
             })
         })
     </script>
