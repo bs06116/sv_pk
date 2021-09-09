@@ -224,6 +224,7 @@ function cityseller()
         $request->request->remove('_token');
         $request->request->remove('accept_terms_condition');
         $application_form->insert($request->all());
+        return redirect('/application_form')->with('message','Application submitted successfully');
     }
 }
 

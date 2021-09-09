@@ -2568,8 +2568,8 @@ label.clearText a {
         width:640px !important;
     }
     #application_form_popup .modal-body{
-        padding-top:40px;
-        padding-bottom:40px;
+        padding-top:70px;
+        padding-bottom:70px;
     }
 }
 
@@ -2717,9 +2717,24 @@ label.clearText a {
 
 .inputSpan input,
 .inputSpan select {
-    padding-left: 27px !important;
+    padding-left: 30px !important;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.inputSpan select{
+    -webkit-appearance: none;
+    background: url(../images/angle-down.png) no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
 .activeTab {
     color: #bc985f !important;
 }
