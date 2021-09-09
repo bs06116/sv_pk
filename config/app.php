@@ -166,7 +166,7 @@ return [
         intervention\image\imageserviceprovider::class,
         Yoeunes\Toastr\ToastrServiceProvider::class,
         Spatie\Newsletter\NewsletterServiceProvider::class,
-        
+
 
         /*
          * Package Service Providers...
@@ -180,6 +180,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 
@@ -234,6 +235,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'image'=> intervention\image\Facades\image::class,
         'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
+
     ],
 
 ];

@@ -26,9 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 ////////////////////////admin
-Route::group(['middleware' => ['auth', 'App\Http\Middleware\Admin']], function () {
-
-
+Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth', 'App\Http\Middleware\Admin']], function () {
     Route::get('/viewagent', function () {
         return view('admin.viewagent');
     });
@@ -40,6 +38,9 @@ Route::group(['middleware' => ['auth', 'App\Http\Middleware\Admin']], function (
     Route::view('agentproperty', 'admin.agentproperty')->name('agentproperty');
     Route::get('unfeatures/{id}', 'UserController@unfeature')->name('unfeatures');
     Route::get('features/{id}', 'UserController@feature')->name('features');
+    ///Application Form Controller//////
+    Route::get('application-from-request', 'ApplicationFormController@index')->name('application-from-request');
+
 });
 // .......................//agent  middleware
 Route::group(['middleware' => ['auth', 'App\Http\Middleware\Agent']], function () {

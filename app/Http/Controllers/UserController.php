@@ -40,13 +40,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-         $rules = [
-           
-	        'email' => ['required', 'max:255', 'email:rfc,dns', 'unique:users'],
+        $rules = [
+
+            'email' => ['required', 'max:255', 'email:rfc,dns', 'unique:users'],
         ];
 
         $this->validate($request, $rules);
-        Session::flash('email','email has be send');
+        Session::flash('email', 'email has be send');
         User::create($request->all());
         toastr()->success('added');
         return redirect()->back();
@@ -60,7 +60,7 @@ class UserController extends Controller
      */
     public function show(user $user)
     {
-        return view ('property-details')->with('user',$user);
+        return view('property-details')->with('user', $user);
     }
 
     /**
@@ -71,7 +71,7 @@ class UserController extends Controller
      */
     public function edit(user $user)
     {
-        return view('admin.editagent')->with('user',$user);
+        return view('admin.editagent')->with('user', $user);
     }
 
     /**
@@ -80,15 +80,15 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\user  $user
      * @return \Illuminate\Http\Response
-     * 
+     *
      */
 
 
     public function profileedit()
     {
-        $id=Auth::user()->id;
-        $user=User::where('id','=',$id)->get();
-        return view('admin.profile',compact('user'));
+        $id = Auth::user()->id;
+        $user = User::where('id', '=', $id)->get();
+        return view('admin.profile', compact('user'));
     }
 
 
@@ -111,28 +111,30 @@ class UserController extends Controller
         toastr()->success('Deleted');
         return redirect()->back();
     }
-    public function block($id){
+    public function block($id)
+    {
         $user = User::find($id);
         $user->update([
-            'block'=>1,
+            'block' => 1,
         ]);
-        toastr()->info(' Terminate','Done');
+        toastr()->info(' Terminate', 'Done');
         return redirect()->back();
     }
-    public function unblock($id){
+    public function unblock($id)
+    {
         $user = User::find($id);
         $user->update([
-            'block'=>0,
+            'block' => 0,
         ]);
-        toastr()->info(' Active','Done');
+        toastr()->info(' Active', 'Done');
         return redirect()->back();
     }
-      public function register(Request $request)
+    public function register(Request $request)
     {
         $rules = [
-           
+
             //'email'     => 'required|email|max:255|unique:users',
-	        'email' => ['required', 'max:255', 'email:rfc,dns', 'unique:users'],
+            'email' => ['required', 'max:255', 'email:rfc,dns', 'unique:users'],
             'password'  => 'required|min:8',
         ];
 
@@ -142,26 +144,28 @@ class UserController extends Controller
         toastr()->success('User Register');
         return redirect()->back();
     }
-     public function unfeature($id){
-        
-        $user=User::where('id', $id)
-              ->update(['status' => 1]);
-        toastr()->info(' Agent ID Unblock ','Done');
+    public function unfeature($id)
+    {
+
+        $user = User::where('id', $id)
+            ->update(['status' => 1]);
+        toastr()->info(' Agent ID Unblock ', 'Done');
         return redirect()->back();
     }
-    public function feature($id){
-        
-       $user=User::where('id', $id)
-              ->update(['status' => 0]);
-              
-        toastr()->info(' Agent ID block ','Done');
+    public function feature($id)
+    {
+
+        $user = User::where('id', $id)
+            ->update(['status' => 0]);
+
+        toastr()->info(' Agent ID block ', 'Done');
         return redirect()->back();
     }
     public function registeragent(Request $request)
     {
         $rules = [
-           
-	        'email' => ['required', 'max:255', 'email:rfc,dns', 'unique:users'],
+
+            'email' => ['required', 'max:255', 'email:rfc,dns', 'unique:users'],
             'password'  => 'required|min:8',
         ];
 
@@ -173,51 +177,46 @@ class UserController extends Controller
     }
     function city()
     {
-     $country_list = DB::table('country_state_city')
-         ->groupBy('country')
-         ->get();
-     return view('agent.addagentproperty')->with('country_list', $country_list);
+        $country_list = DB::table('country_state_city')
+            ->groupBy('country')
+            ->get();
+        return view('agent.addagentproperty')->with('country_list', $country_list);
     }
     function fetch(Request $request)
     {
-     $select = $request->get('select');
-     $value = $request->get('value');
-     $dependent = $request->get('dependent');
-     $data = DB::table('country_state_city')
-       ->where($select, $value)
-       ->groupBy($dependent)
-       ->get();
-     $output = '<option value="">Select '.ucfirst($dependent).'</option>';
-     foreach($data as $row)
-     {
-      $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
-     }
-     echo $output;
+        $select = $request->get('select');
+        $value = $request->get('value');
+        $dependent = $request->get('dependent');
+        $data = DB::table('country_state_city')
+            ->where($select, $value)
+            ->groupBy($dependent)
+            ->get();
+        $output = '<option value="">Select ' . ucfirst($dependent) . '</option>';
+        foreach ($data as $row) {
+            $output .= '<option value="' . $row->$dependent . '">' . $row->$dependent . '</option>';
+        }
+        echo $output;
     }
-function cityseller()
+    function cityseller()
     {
-     $country_list = DB::table('country_state_city')
-         ->groupBy('country')
-         ->get();
-     return view('seller.addproperty')->with('country_list', $country_list);
+        $country_list = DB::table('country_state_city')
+            ->groupBy('country')
+            ->get();
+        return view('seller.addproperty')->with('country_list', $country_list);
     }
     function fetchseller(Request $request)
     {
-     $select = $request->get('select');
-     $value = $request->get('value');
-     $dependent = $request->get('dependent');
-     $data = DB::table('country_state_city')
-       ->where($select, $value)
-       ->groupBy($dependent)
-       ->get();
-     $output = '<option value="">Select '.ucfirst($dependent).'</option>';
-     foreach($data as $row)
-     {
-      $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
-     }
-     echo $output;
+        $select = $request->get('select');
+        $value = $request->get('value');
+        $dependent = $request->get('dependent');
+        $data = DB::table('country_state_city')
+            ->where($select, $value)
+            ->groupBy($dependent)
+            ->get();
+        $output = '<option value="">Select ' . ucfirst($dependent) . '</option>';
+        foreach ($data as $row) {
+            $output .= '<option value="' . $row->$dependent . '">' . $row->$dependent . '</option>';
+        }
+        echo $output;
     }
 }
-
-
-
