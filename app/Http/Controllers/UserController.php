@@ -119,6 +119,7 @@ class UserController extends Controller
         toastr()->info(' Terminate','Done');
         return redirect()->back();
     }
+    
     public function unblock($id){
         $user = User::find($id);
         $user->update([
@@ -216,6 +217,9 @@ function cityseller()
       $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
      }
      echo $output;
+    }
+    public function Application_save(){
+        dd('hello');
     }
 }
 

@@ -240,6 +240,10 @@ Route::get('/property-detail/{id}', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/application_form', function () {
+    return view('application_form');
+});
+Route::post('/application_form_submit', 'userController@Application_save');
 // Route::post('ads','AdsController@index');
 //controller
 Route::resource('contact', 'ContactController');
