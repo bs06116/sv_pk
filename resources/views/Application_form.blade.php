@@ -44,11 +44,11 @@
             </div>
         </div>
     </div>
-        
+
     <!-- INNER PAGE BANNER -->
     <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center"  data-stellar-background-ratio="0.5"  style="background-image:url(images/contact.jpg);">
         <div class="overlay-main bg-black opacity-07"></div>
-       
+
             <div class="wt-bnr-inr-entry">
    <div class="contactInfo">
        <div class="container">
@@ -89,7 +89,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="inputSpan">
-                                <i class="fa fa-venus-mars" aria-hidden="true"></i> 
+                                <i class="fa fa-venus-mars" aria-hidden="true"></i>
                                 <select class="custom-select form-control decor"name="status">
                                     <option name="subject" selected disabled value="" >Status</option>
                                     <option name="subject"value="male">Married</option>
@@ -108,7 +108,7 @@
                             <div class="col-lg-6 mt-21">
                                 <div class="inputSpan">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <input name="address" type="text" class="form-control" required placeholder="Address">
+                                    <input name="address" type="text" class="form-control"  placeholder="Address (optional)">
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-21">
@@ -138,12 +138,12 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-21">
-                                <div class="inputSpan Intrested-more-field" id="house" style="display:none;"> 
+                                <div class="inputSpan Intrested-more-field" id="house" style="display:none;">
                                     <i class="fa fa-area-chart" aria-hidden="true"></i>
                                     <input name="size" type="text" class="form-control" placeholder="Size" />
                                 </div>
-                                <div class="inputSpan Intrested-more-field" id="plot" style="display:none;"> 
-                                  <i class="fa fa-area-chart" aria-hidden="true"></i>      
+                                <div class="inputSpan Intrested-more-field" id="plot" style="display:none;">
+                                  <i class="fa fa-area-chart" aria-hidden="true"></i>
                                    <select class="custom-select form-control decor"name="plot">
                                         <option name="subject" selected disabled value="" >Plot</option>
                                         <option name="subject"value="03">03</option>
@@ -184,29 +184,35 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-21">
-                                <div class="inputSpan" id="down_payment">   
+                                <div class="inputSpan" id="down_payment">
                                     <i class="fa fa-handshake-o" style="font-size:12px;" aria-hidden="true"></i>
                                     <select class="custom-select form-control decor"name="down_payment" required>
                                         <option name="subject" selected disabled value="" >Down payment</option>
                                     </select>
                                 </div>
-                            </div> 
-                            <div class="col-lg-6 mt-21">
-                                <div class="inputSpan" id="monthly_installment">   
-                                    <i class="fa fa-money" aria-hidden="true"></i>        
-                                    <select class="custom-select form-control decor" name="monthly_installment" required>
-                                        <option name="subject" selected disabled value="" >Monthly Installment</option>
-                                        <option name="subject" value="5000">5000</option>
-                                        <option name="subject" VALUE="10000">10000</option>
+                            </div>
+                            <div class="col-lg-3 mt-21">
+                                <div class="" id="monthly_installment">
+                                    <input name="monthly_installment" type="text" class="form-control" required placeholder="Monthly Installment">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 mt-21">
+                                <div class="inputSpan" id="monthly_installment">
+                                    <i class="fa fa-money" aria-hidden="true"></i>
+                                    <select class="custom-select form-control decor" name="ruppes" required>
+                                        <option  value="Hazar">Hazar</option>
+                                        <option  value="Lakh">Lakh</option>
+                                        <option  value="Crore">Crore</option>
+
                                     </select>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-lg-6 mt-21">
                                 <label>
                                   <input type="checkbox" name="accept_terms_condition" /> &nbsp; Accept Terms & Condition
                                 </label>
                             </div>
-                        </div>   
+                        </div>
                         <div class="row mt-30">
                             <div class="col-lg-12">
                                 <button class="formSubmitBtn" type="submit" disabled>Submit</button>

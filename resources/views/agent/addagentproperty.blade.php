@@ -187,7 +187,7 @@ li{
         <div class="user-details" style="padding: 8px;">
           <div class="text-center">
             <img src="{{Auth::user()->image}}" alt="" class="rounded-circle"style="height: 39px;width: 43px;">
-             
+
           </div>
           <div class="user-info">
               <a href="{{route('profile')}}" style="color:#fff;font-size: 12px;">(Edit profile)</a>
@@ -195,7 +195,7 @@ li{
 
 
              </span>
-          </div> 
+          </div>
         </div>
         <hr style="width: 233px;height: -13px;background: aliceblue;">
         <div id="sidebar-menu">
@@ -219,15 +219,15 @@ li{
                 <i class="fa fa-users" aria-hidden="true"></i>
                   <span>View Estate Agents <span class="badge badge-primary pull-right"></span></span>
               </a>
-          </li>  
+          </li>
               <li>
                   <a href="{{route('buyer.index')}}" class="waves-effect">
                     <i class="fa fa-users" aria-hidden="true"></i>
                       <span>View Buyers <span class="badge badge-primary pull-right"></span></span>
                   </a>
               </li>
-              
-            
+
+
               <li>
                 <a href="{{route('seller.index')}}" class="waves-effect">
                   <i class="fa fa-users" aria-hidden="true"></i>
@@ -240,7 +240,7 @@ li{
                   <span>Sellers Properties <span class="badge badge-primary pull-right"></span></span>
               </a>
           </li>
-          
+
           <li>
             <a href="{{route('agentproperty')}}" class="waves-effect">
               <i class="fa fa-building" aria-hidden="true"></i>
@@ -252,7 +252,7 @@ li{
           <!--      <span>Home <span class="badge badge-primary pull-right"></span></span>-->
           <!--  </a>-->
         <!--</li>-->
-        
+
           @elseif (Auth::user()->type=='seller')
           <li>
             <a href="{{url('/')}}" class="waves-effect">
@@ -337,7 +337,7 @@ style="color: #83693b; text-align: center;display: none;">For main banner Advert
 <!--  </li>-->
 <!-- <li>-->
 <!--    <a href="" class="waves-effect">-->
-     
+
 <!--        <span>Estate Agent Pakage is Dimond <span class="badge badge-primary pull-right"></span></span>-->
 <!--    </a>-->
 <!--</li>-->
@@ -356,7 +356,7 @@ style="color: #83693b; text-align: center;display: none;">For main banner Advert
 style="color: #83693b; text-align: center;display: none;">For Package Renewal Please contact with administrator</p>
 <p style="color:white;margin-left: 93px;">OR</p>
 <button class="infoText" style="
- 
+
  padding: 10px 30px;
   border-radius: 14px;
   background: #83693b;
@@ -369,13 +369,13 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
 <br><br><br>
 
        @endif
-       
+
           </ul>
-         
+
       </div>
-        
+
         <div class="clearfix"></div>
-        
+
       </div> <!-- end sidebarinner -->
     </div>
     <!-- Left Sidebar End -->
@@ -393,7 +393,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
 
             <ul class="list-inline float-right mb-0">
                 @if (Auth::user()->type=='admin')
-                
+
 
               <li class="list-inline-item dropdown notification-list">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#"
@@ -401,20 +401,20 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                   <img src={{Auth::user()->image}} alt="user" class="rounded-circle" style="margin-bottom: 26px;">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                 
-                  
+
+
                   <a class="dropdown-item" href="{{ url('password') }}"><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Change Password</a>
                    <a class="dropdown-item" href="{{ url('contact') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Support</a>
                   <a class="dropdown-item" href="{{route('user.logout')}}"><i
                       class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                 </div>
-                
+
               </li>
-              
-              
+
+
               @elseif (Auth::user()->type=='agent')
               <li class="sellproperty">
-                <span><a href="{{route('addagentproperty')}}"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp<b>Add Property</b></a></span> 
+                <span><a href="{{route('addagentproperty')}}"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp<b>Add Property</b></a></span>
                 </li>
 
               <li class="list-inline-item dropdown notification-list">
@@ -423,17 +423,17 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                   <img src={{Auth::user()->image}} alt="user" class="rounded-circle" style="margin-bottom: 26px;">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                 
+
                   <a class="dropdown-item" href="{{ url('password') }}"><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Change Password</a>
                    <a class="dropdown-item" href="{{ url('contact') }}"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Support</a>
                   <a class="dropdown-item" href="{{route('user.logout')}}"><i
                       class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                 </div>
-                
+
               </li>
              @endif
             </ul>
-            
+
 
             <ul class="list-inline menu-left mb-0">
               <li class="list-inline-item">
@@ -446,7 +446,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
               </li>
             </ul>
 
-          
+
 
           </nav>
 
@@ -456,10 +456,10 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                         {{ csrf_field() }}
                                                     <table class="table table-striped">
                                                       <tbody>
-                                                        
-                                                        
+
+
                                                          <tr>
-                                                            
+
                                                             <td colspan="1">
                                                                 <fieldset>
                                                                    <div class="form-group">
@@ -483,7 +483,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                       <label class="col-md-4 control-label">Province <span style="color:red;">*</span></label>
                                                                       <div class="col-md-8 inputGroupContainer">
                                                                          <div class="input-group">
-                                                                            <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span> 
+                                                                            <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
                                                                             <select  class="form-control" name="province" required>
                                                                                <option name="province" value="">Select Province </option>
                                                                                <option value="Islamabad">Federal</option>
@@ -521,7 +521,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span><input required  name="price" placeholder="Price"
                                                                          class="input-group form-control numberInput" required="true" value="" type="text">
                                                                             <input name="enable" type="hidden"value="0"id="example-date-input">
-                                                                            
+
                                                                          </div>
                                                                       </div>
                                                                    </div>
@@ -543,7 +543,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                  </div>
                                                                    <br>
                                                                    <br>
-                                                                   
+
                                                                    <div class="form-group">
                                                                       <label class="col-md-4 control-label">Garage</label>
                                                                       <div class="col-md-8 inputGroupContainer">
@@ -566,14 +566,14 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-image-o" aria-hidden="true"></i></i></span><input name="gallaryimage[]"id="image" type="file" required="true" accept="image/*" placeholder="Featured Image" class="form-control"  style="padding-top: 3px;padding-left: 0px;" multiple><span class="infoText"><i class="fa fa-info" aria-hidden="true"></i></span></div>
                                                                          <p class="sizeText">Max Image Upload 30 and Min Image Upload 2</p>
                                                                       </div>
-                                                                      
+
                                                                    </div>
-                                                                   
+
                                                                 </fieldset>
                                                              </td>
                                                              <td colspan="1">
                                                                 <fieldset>
-                                                                 
+
                                                                    <div class="form-group">
                                                                       <label class="col-md-4 control-label">Email</label>
                                                                       <div class="col-md-8 inputGroupContainer">
@@ -585,7 +585,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                    <div class="form-group">
                                                                         <label class="col-md-4 control-label">City <span style="color:red;">*</span></label>
                                                                         <div class="col-md-8 inputGroupContainer">
-                                                                            
+
                                                                             <div class="input-group"><span class="input-group-addon"><i class="fa fa-arrows-alt" aria-hidden="true"></i></span>
                                                                                 <select name="city" id="country" class="form-control input-lg dynamic" data-dependent="address"style="font-size: 14px;">
                                                                                     <option  value="">Select City</option>
@@ -601,7 +601,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                    <div class="form-group">
                                                                     <label class="col-md-4 control-label">Address <span style="color:red;">*</span></label>
                                                                     <div class="col-md-8 inputGroupContainer">
-                                                                        
+
                                                                         <div class="input-group"><span class="input-group-addon"><i class="fa fa-arrows-alt" aria-hidden="true"></i></span>
                                                                             <select name="address" id="address" class="form-control input-lg dynamic" style="font-size: 14px;">
                                                                                 <option value="">Select Address</option>
@@ -633,7 +633,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                                   <option value="Commercial Plots">Commercial Plots</option>
                                                                                   <option value="Agricultural Plots">Agricultural Plots</option>
                                                                                   <option value="Industrial Plots">Industrial Plots</option>
-                                                                                  {{-- 
+                                                                                  {{--
                                                                                   <option value="Plot File">Plot File</option>
                                                                                   <option value="Plot Farm">Plot Farm</option>
                                                                                   --}}
@@ -643,11 +643,11 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                                   <option value="Shop">Shop</option>
                                                                                   <option value="Factory">Factory</option>
                                                                                   <option value="Warehouse">Warehouse</option>
-                                                                                 
+
                                                                                   <option value="Building">Building</option>
                                                                                   <option value="Building">Basement</option>
                                                                                   <option value="Other">Other</option>
-                                                                                  
+
                                                                                </optgroup>
                                                                             </select>
                                                                          </div>
@@ -658,7 +658,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                    <div class="form-group">
                                                                       <label class="col-md-4 control-label">Land Area <span style="color:red;">*</span></label>
                                                                       <div class="col-md-8 inputGroupContainer">
-                                                                          
+
                                                                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-arrows-alt" aria-hidden="true"></i></span><select class="form-control" name="area" id="" required>
                                                                               <option name="area" value="">Select Area</option>
                                                                               <option value="Kanal">Kanal</option>
@@ -692,14 +692,13 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-video-o" aria-hidden="true"></i></span><input name="video" type="file"accept="video/*" placeholder="Upload Video" class="form-control"  style="padding-top: 3px;padding-left: 0px;"></div>
                                                                       </div>
                                                                    </div>
-                                                                  
                                                                 </fieldset>
                                                                 <br>
                                                                 <br>
-                                                               
+
                                                              </td>
-                                                            
-                                                         </tr>                                                      
+
+                                                         </tr>
                                                       </tbody>
                                                    </table>
                                                    <div class="row">
@@ -717,9 +716,9 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
                                                        </div>
                                                    </div>
                                                 </form>
-                                            </div>   
+                                            </div>
 
-                                     
+
             </div> <!-- content -->
 
             <footer class="footer">
@@ -734,7 +733,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
 
 
     <!-- jQuery  -->
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ asset('new/assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('new/assets/js/tether.min.js') }}"></script>
@@ -768,7 +767,7 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
     <!-- Responsive examples -->
     <script src="{{ asset('new/assets/plugins/datatables/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('new/assets/plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
-    
+
 <!--<script src="{{ asset('new/assets/js/easy-number-separator.js')}}"></script>-->
     <!-- Datatable init js -->
     <script src="{{ asset('new/assets/pages/datatables.init.js') }}"></script>
@@ -808,37 +807,37 @@ style="color: #83693b; text-align: center;display: none;margin-top: 21px;">For u
 		var returnNumber=numberToWords(number);
 		console.log(returnNumber);
 	}
-	function numberToWords(number) { 
-	console.log("number",number) 
-        var digit = ['zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];  
-        var elevenSeries = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];  
-        var countingByTens = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];  
-        var shortScale = ['', 'Thousand', 'Million', 'Billion', 'Trillion'];  
-  
-        number = number.toString(); number = number.replace(/[\, ]/g, ''); 
-        if (number != parseFloat(number)) 
-        	return 'not a number'; var x = number.indexOf('.'); 
-        if (x == -1) 
-        	x = number.length; 
-        if (x > 15) 
-        	return 'too big'; 
-        	var n = number.split(''); 
-        	var str = ''; 
-        	var sk = 0; 
-        	for (var i = 0; i < x; i++) { 
-        		if ((x - i) % 3 == 2) { 
-        			if (n[i] == '1') { 
-        				str += elevenSeries[Number(n[i + 1])] + ' '; i++; sk = 1; 
-        			} 
-        			else if (n[i] != 0) { 
-        				str += countingByTens[n[i] - 2] + ' '; sk = 1; } 
-        			} 
-        			else if (n[i] != 0) { 
-        				str += digit[n[i]] + ' '; 
-        				if ((x - i) % 3 == 0) 
-        					str += 'hundred '; sk = 1; } if ((x - i) % 3 == 1) { if (sk) str += shortScale[(x - i - 1) / 3] + ' '; sk = 0; } } if (x != number.length) { var y = number.length; str += 'point '; for (var i = x + 1; i < y; i++) str += digit[n[i]] + ' '; } str = str.replace(/\number+/g, ' '); return str.trim() + ".";  
+	function numberToWords(number) {
+	console.log("number",number)
+        var digit = ['zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+        var elevenSeries = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+        var countingByTens = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+        var shortScale = ['', 'Thousand', 'Million', 'Billion', 'Trillion'];
+
+        number = number.toString(); number = number.replace(/[\, ]/g, '');
+        if (number != parseFloat(number))
+        	return 'not a number'; var x = number.indexOf('.');
+        if (x == -1)
+        	x = number.length;
+        if (x > 15)
+        	return 'too big';
+        	var n = number.split('');
+        	var str = '';
+        	var sk = 0;
+        	for (var i = 0; i < x; i++) {
+        		if ((x - i) % 3 == 2) {
+        			if (n[i] == '1') {
+        				str += elevenSeries[Number(n[i + 1])] + ' '; i++; sk = 1;
+        			}
+        			else if (n[i] != 0) {
+        				str += countingByTens[n[i] - 2] + ' '; sk = 1; }
+        			}
+        			else if (n[i] != 0) {
+        				str += digit[n[i]] + ' ';
+        				if ((x - i) % 3 == 0)
+        					str += 'hundred '; sk = 1; } if ((x - i) % 3 == 1) { if (sk) str += shortScale[(x - i - 1) / 3] + ' '; sk = 0; } } if (x != number.length) { var y = number.length; str += 'point '; for (var i = x + 1; i < y; i++) str += digit[n[i]] + ' '; } str = str.replace(/\number+/g, ' '); return str.trim() + ".";
   		return number;
-    } 
+    }
 </script>
 <script>
     /*
@@ -992,7 +991,7 @@ function($) {
 
 
 
-    
+
 </script>
 <script>
     var parentValue;
@@ -1001,7 +1000,7 @@ function($) {
     parentValue=selected.parent()[0].label;
     console.log(selected.parent()[0].label);
     jQuery("#setTypeValue").val(parentValue);
-  
+
     });
     </script>
     <script>
@@ -1016,7 +1015,7 @@ function($) {
             }
         })
     </script>
-    
+
 <script>
     $("button.infoTextsss").click(function(){
         if($(".sizeTextsss").css("display")=="block"){
@@ -1065,7 +1064,7 @@ function($) {
     </script>
     <script>
         $(document).ready(function(){
-        
+
          $('.dynamic').change(function(){
           if($(this).val() != '')
           {
@@ -1081,21 +1080,21 @@ function($) {
             {
              $('#'+dependent).html(result);
             }
-        
+
            })
           }
          });
-        
+
          $('#country').change(function(){
           $('#state').val('');
           $('#address').val('');
          });
-        
+
          $('#state').change(function(){
           $('#address').val('');
          });
-         
-        
+
+
         });
         </script>
             <script>
@@ -1105,11 +1104,11 @@ function($) {
         if (status.value == "Residential Plots" || status.value == "Commercial Plots"
          || status.value == "Agricultural Plots" || status.value == "Industrial Plots")
         {
-            
+
             document.getElementById("beds").disabled = true;
             document.getElementById("baths").disabled = true;
             document.getElementById("garages").disabled = true;
-          
+
         }
 
         else
@@ -1117,7 +1116,7 @@ function($) {
             document.getElementById("beds").disabled = false;
             document.getElementById("baths").disabled = false;
             document.getElementById("garages").disabled = false;
-        }        
+        }
 }
         </script>
 
