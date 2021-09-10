@@ -2552,6 +2552,9 @@ label.clearText a {
 .bg-theme-red{
     background:#e33324;
 }
+.mt-20{
+    margin-top:20px;
+}
 .form-modal-button{
     color: #fff;
     border: 0;
@@ -2565,14 +2568,41 @@ label.clearText a {
 }
 @media(min-width:768px){
     #application_form_popup .modal-dialog{
-        width:640px !important;
+        width:725px !important;
     }
     #application_form_popup .modal-body{
         padding-top:70px;
         padding-bottom:70px;
     }
 }
-
+.px-30{
+    padding-left:30px;
+    padding-right:30px;
+}
+.border-skew:before{
+    content: "";
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    background: #fff;
+    transform: skewX(341deg);
+}
+.nav_helper_links{
+    margin-right: 20px;
+    font-weight: 600;
+    color:#bc985f;
+}
+.nav_helper_links:hover{
+    color:#040404 !important;
+}
+.nav_helper_links i{
+    margin-left: 5px;
+}
+.mr-20{
+    margin-right:20px;
+}
 #application_form_popup .modal-dialog p{
     margin-bottom: 0;
     margin-top: 10px;

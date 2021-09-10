@@ -1338,10 +1338,10 @@
       </div>
         <div class="modal-body">
             <div class="d-flex"> 
-                <div class="w-50 px-10">
+                <div class="w-50 px-30">
                     <a href="{{url('/application_form?application=plots_house')}}" class="bg-theme-brown form-modal-button">Aplication Form plots and house</a>
                 </div>
-                <div class="w-50 px-10">
+                <div class="w-50 px-30 border-skew">
                     <a href="{{url('/application_form?application=form_investment')}}" class="bg-theme-brown form-modal-button">Aplication Form Investment</a>
                 </div>
             </div>    
