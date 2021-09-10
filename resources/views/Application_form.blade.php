@@ -141,7 +141,7 @@ top:13px !important;
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-21">
-                                <div class="inputSpan Intrested-more-field" id="house" style="display:none;">
+                                <div class="inputSpan Intrested-more-field" id="House" style="display:none;">
                                     <i class="fa fa-area-chart" aria-hidden="true"></i>
                                     <input name="size" type="text" class="form-control" placeholder="Size" />
                                     <div class="inputSpan mt-21">
@@ -154,11 +154,11 @@ top:13px !important;
                                         </select>
                                     </div>
                                 </div>
-                                <div class="inputSpan Intrested-more-field" id="apartment" style="display:none;">
+                                <div class="inputSpan Intrested-more-field" id="Apartment" style="display:none;">
                                     <i class="fa fa-area-chart" aria-hidden="true"></i>
                                     <input name="size_appartment" type="text" class="form-control" placeholder="Size" />
                                 </div>
-                                <div class="inputSpan Intrested-more-field" id="plot" style="display:none;">
+                                <div class="inputSpan Intrested-more-field" id="Plot" style="display:none;">
                                     <i class="fa fa-area-chart" aria-hidden="true"></i>
 
                                     <input name="size" type="text" class="form-control" placeholder="Size" />
@@ -172,7 +172,7 @@ top:13px !important;
                                         </select>
                                     </div>
                                 </div>
-                                <div class="Intrested-more-field" id="commercial" style="display:none;">
+                                <div class="Intrested-more-field" id="Commercial" style="display:none;">
                                     @if( request()->get('application') == "form_investment")
                                     <div class="inputSpan">
                                         <i class="fa fa-hospital-o" aria-hidden="true"></i>
@@ -237,17 +237,16 @@ top:13px !important;
                         <div class="row mt-30">
                             <div class="col-lg-12">
                                 <button class="formSubmitBtn mr-20" type="submit" disabled>Submit</button>
-                                    @if(Session::has('message'))
+                                <div style="display: none" id="show_message">
+                                        <p class="text-success mt-20 "></p>
                                         <a href="javascript:void(0)" class="nav_helper_links reload">Interested in Investment Opportunities
                                             <i class="fa fa-arrow-right"></i>
                                         </a>
                                         <a href="{{url('/')}}" class="nav_helper_links">
                                             Home Page  <i class="fa fa-arrow-right"></i>
                                         </a>
-                                    @endif
-                                    @if(Session::has('message'))
-                                        <p class="text-success mt-20">{{Session::get('message')}}</p>
-                                    @endif
+
+                                </div>
                             </div>
                         </div>
                         </form>
@@ -256,8 +255,6 @@ top:13px !important;
            </div>
        </div>
     </div>
-<script src="{{asset('new/assets/js/app.js')}}"></script>
-  <script src="{{asset('new/toastr/toastr.min.js')}}"></script>
     <script>
         $(document).ready(() => {
             $('#intrested_dropdown').change((e) => {
@@ -288,10 +285,10 @@ top:13px !important;
                 url:"{{ route('application-form-submit') }}",
                 data: data,
                 success:function(data) {
-                    $("#msg").html(data.msg);
+                    $("#show_message").show();
+                    $(".text-success").html(data.message);
                     $('form').trigger("reset");
-
-                }
+                    }
                 });
             })
         })

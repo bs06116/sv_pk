@@ -223,7 +223,7 @@ class UserController extends Controller
     public function ApplicationStore(Request $request){
         $application_form = new ApplicationForm();
         return response()->json([
-            'message' => 'Success',
+            'message' => 'Your form has been submited successfully.',
             'success' => true,
         ]);
     }
