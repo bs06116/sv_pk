@@ -1220,7 +1220,6 @@
         </div>
     </div>
 </div>
- 
 <div class="testimonialDiv">
     <div class="container">
         <div class="row">
@@ -1327,11 +1326,36 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div id="application_form_popup" class="modal fade" role="dialog">
+  <div class="modal-dialog left-0">
 
+    <!-- Modal content-->
+    <div class="modal-content bg-gredient-black">
+      <div class="modal-header">
+        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-white text-center">Application Forms</h4>
+      </div>
+        <div class="modal-body">
+            <div class="d-flex"> 
+                <div class="w-50 px-10">
+                    <a href="{{url('/application_form?application=plots_house')}}" class="bg-theme-brown form-modal-button">Aplication Form plots and house</a>
+                </div>
+                <div class="w-50 px-10">
+                    <a href="{{url('/application_form?application=form_investment')}}" class="bg-theme-brown form-modal-button">Aplication Form Investment</a>
+                </div>
+            </div>    
+        </div>
+    </div>
+  </div>
+</div>
 <script src="{{asset('new/assets/js/app.js')}}"></script>
   <script src="{{asset('new/toastr/toastr.min.js')}}"></script>
 
 <script>
+    $(document).ready(() => {
+        $('#application_form_popup').modal('show');
+    });
     $('#minprice').keyup(function() {
         search_result();
 })

@@ -2537,7 +2537,91 @@ label.clearText a {
     color: #fff;
     font-size: 18px;
 }
+.text-white{
+    color:#fff;
+}
+.theme-text-color{
+    color:#bc985f
+}
+.bg-theme-brown{
+    background-color:#bc985f!important;
+}
+.bg-theme-app .modal-header{
+    border-bottom:1px solid #040404 !important;
+}
+.bg-theme-red{
+    background:#e33324;
+}
+.form-modal-button{
+    color: #fff;
+    border: 0;
+    padding: 15px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+@media(min-width:768px){
+    #application_form_popup .modal-dialog{
+        width:640px !important;
+    }
+    #application_form_popup .modal-body{
+        padding-top:70px;
+        padding-bottom:70px;
+    }
+}
 
+#application_form_popup .modal-dialog p{
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #474747;
+}
+.bg-gredient-black{
+    background:rgb(0, 0 ,0 , 0.64) !important;
+}
+#application_form_popup .modal-dialog .close{
+    margin-top: -2px;
+    font-size: 27px;
+    color: #fff;
+    opacity:1;
+}
+.px-10{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.form-modal-button:hover{
+    color:#fff;
+    background:#040404 !important;
+}
+.border-right-black{
+    border-right:1px solid #040404 !important;
+}
+.mt-20{
+    margin-top:20px;
+}
+.d-flex{
+    display:flex;
+}
+.w-50{
+    width:50%;
+}
+.color-modal-black{
+    color:#040404 !important;
+}
+.bg-theme-app{
+    background:rgb(188, 152, 95, 91%) !important
+}
+.left-0{
+    left:0 !important;
+}
+.contactInfo .formSubmitBtn:disabled{
+    opacity:0.7;
+    cursor:not-allowed;
+}
 .contactnew {
     background-image: url(../img/banner2.jpg);
     background-position: center;
@@ -2633,9 +2717,24 @@ label.clearText a {
 
 .inputSpan input,
 .inputSpan select {
-    padding-left: 27px !important;
+    padding-left: 30px !important;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.inputSpan select{
+    -webkit-appearance: none;
+    background: url(../images/angle-down.png) no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
 .activeTab {
     color: #bc985f !important;
 }

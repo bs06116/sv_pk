@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Application_form;
 use Illuminate\Http\Request;
 use Toastr;
 use App\Models\ImageHelper;
@@ -219,7 +220,11 @@ class UserController extends Controller
         }
         echo $output;
     }
-    public function Application_save(){
-        dd('hello');
+    public function Application_save(Request $request){
+        $application_form = new Application_form();
+        $request->request->remove('_token');
+        $request->request->remove('accept_terms_condition');
+        $application_form->insert($request->all());
+        return redirect('/application_form')->with('message','Application submitted successfully');
     }
 }
