@@ -22,6 +22,12 @@
     font-size:20px;
     font-weight:600;
 }
+.inputSpan input, .inputSpan select {
+    height:40px;
+}
+.inputSpan i{
+top:13px !important;
+}
 </style>
 @extends('layouts.header')
 @section('title')
@@ -56,9 +62,6 @@
                <div class="col-lg-8 mx-auto">
                    <div class="rightDiv">
                    <h5 class="mb-5 form-heading">Aplication Form plots and house</h5>
-                   @if(Session::has('message'))
-                   <p class="text-success mb-3">{{Session::get('message')}}</p>
-                   @endif
                     <form class="" method="post" action="{{url('application_form_submit')}}">
                         @csrf
                         <div class="row">
@@ -82,8 +85,8 @@
                                 <i class="fa fa-venus-mars" aria-hidden="true"></i>
                                 <select class="custom-select form-control decor"name="gender">
                                     <option name="subject" selected disabled value="" >Gender</option>
-                                    <option name="subject"value="male">Male</option>
-                                    <option name="subject" value="female">Female</option>
+                                    <option name="subject"value="Male">Male</option>
+                                    <option name="subject" value="Female">Female</option>
                                 </select>
                                 </div>
                             </div>
@@ -92,8 +95,8 @@
                                 <i class="fa fa-venus-mars" aria-hidden="true"></i>
                                 <select class="custom-select form-control decor"name="status">
                                     <option name="subject" selected disabled value="" >Status</option>
-                                    <option name="subject"value="male">Married</option>
-                                    <option name="subject" value="female">Single</option>
+                                    <option name="subject"value="Married">Married</option>
+                                    <option name="subject" value="Single">Single</option>
                                 </select>
                                 </div>
                             </div>
@@ -128,11 +131,11 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <select class="custom-select form-control decor" id="intrested_dropdown" name="intrested_in" required>
                                     <option name="subject" selected disabled value="" >Intrested In</option>
-                                    <option name="subject" value="house">House</option>
-                                    <option name="subject" value="plot">Plot</option>
-                                    <option name="subject" value="commercial">Commercial</option>
+                                    <option name="subject" value="House">House</option>
+                                    <option name="subject" value="Plot">Plot</option>
+                                    <option name="subject" value="Commercial">Commercial</option>
                                     @if( request()->get('application') == "form_investment")
-                                    <option name="subject" value="apartment">Apartment</option>
+                                    <option name="subject" value="Apartment">Apartment</option>
                                     @endif
                                 </select>
                                 </div>
@@ -141,15 +144,33 @@
                                 <div class="inputSpan Intrested-more-field" id="house" style="display:none;">
                                     <i class="fa fa-area-chart" aria-hidden="true"></i>
                                     <input name="size" type="text" class="form-control" placeholder="Size" />
+                                    <div class="inputSpan mt-21">
+                                        <i class="fa fa-arrows" aria-hidden="true"></i>
+                                        <select class="custom-select form-control decor" name="land_area">
+                                            <option value="Kanal">Kanal</option>
+                                            <option value="Marla">Marla</option>
+                                            <option value="Sq.yd">Square yard</option>
+                                            <option value="Sq.ft">Square Feet</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="inputSpan Intrested-more-field" id="apartment" style="display:none;">
+                                    <i class="fa fa-area-chart" aria-hidden="true"></i>
+                                    <input name="size_appartment" type="text" class="form-control" placeholder="Size" />
                                 </div>
                                 <div class="inputSpan Intrested-more-field" id="plot" style="display:none;">
-                                  <i class="fa fa-area-chart" aria-hidden="true"></i>
-                                   <select class="custom-select form-control decor"name="plot">
-                                        <option name="subject" selected disabled value="" >Plot</option>
-                                        <option name="subject"value="03">03</option>
-                                        <option name="subject"value="04">04</option>
-                                        <option name="subject" value="20">20</option>
-                                    </select>
+                                    <i class="fa fa-area-chart" aria-hidden="true"></i>
+
+                                    <input name="size" type="text" class="form-control" placeholder="Size" />
+                                    <div class="inputSpan mt-21">
+                                        <i class="fa fa-arrows" aria-hidden="true"></i>
+                                        <select class="custom-select form-control decor" name="land_area">
+                                            <option value="Kanal">Kanal</option>
+                                            <option value="Marla">Marla</option>
+                                            <option value="Sq.yd">Square yard</option>
+                                            <option value="Sq.ft">Square Feet</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="Intrested-more-field" id="commercial" style="display:none;">
                                     @if( request()->get('application') == "form_investment")
@@ -203,9 +224,9 @@
                                         <option  value="Hazar">Hazar</option>
                                         <option  value="Lakh">Lakh</option>
                                         <option  value="Crore">Crore</option>
-
                                     </select>
-                                </div>
+
+                            </div>
                             </div>
                             <div class="col-lg-6 mt-21">
                                 <label>
@@ -215,7 +236,18 @@
                         </div>
                         <div class="row mt-30">
                             <div class="col-lg-12">
-                                <button class="formSubmitBtn" type="submit" disabled>Submit</button>
+                                <button class="formSubmitBtn mr-20" type="submit" disabled>Submit</button>
+                                    @if(Session::has('message'))
+                                        <a href="javascript:void(0)" class="nav_helper_links reload">Interested in Investment Opportunities
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a>
+                                        <a href="{{url('/')}}" class="nav_helper_links">
+                                            Home Page  <i class="fa fa-arrow-right"></i>
+                                        </a>
+                                    @endif
+                                    @if(Session::has('message'))
+                                        <p class="text-success mt-20">{{Session::get('message')}}</p>
+                                    @endif
                             </div>
                         </div>
                         </form>
@@ -233,6 +265,9 @@
                $('.Intrested-more-field input').val("");
                $('#'+e.target.value).show();
             })
+            $('a.reload').click(()=>{
+                window.location.reload();
+            })
             for(let i=0; i<50; i++){
                 let key = parseInt(i) + parseInt(1)
                 $('#down_payment select').append('<option value='+key+'>'+key+"%"+'</option>')
@@ -244,18 +279,22 @@
                     $('.formSubmitBtn').prop('disabled',true);
                 }
             })
-            $('form').submit(function(){
-                return true;
+            $('form').submit(function(e){
+                e.preventDefault();
+                data = $("form").serialize();
+
+                $.ajax({
+                type:'POST',
+                url:"{{ route('application-form-submit') }}",
+                data: data,
+                success:function(data) {
+                    $("#msg").html(data.msg);
+                    $('form').trigger("reset");
+
+                }
+                });
             })
         })
     </script>
-  <script>$(window).on('load', function(){
-    @if(Session::has('emailsend'))
-    </script>
-    <script>
-swal("Thank You","A member of the team will be in touch with you shortly");
-  </script>
 
-  @endif
-  @toastr_render
 @endsection
