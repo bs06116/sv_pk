@@ -222,6 +222,9 @@ class UserController extends Controller
     }
     public function ApplicationStore(Request $request){
         $application_form = new ApplicationForm();
+        $request->request->remove('_token');
+        $request->request->remove('accept_terms_condition');
+        $application_form->insert($request->all());
         return response()->json([
             'message' => 'Your form has been submited successfully.',
             'success' => true,

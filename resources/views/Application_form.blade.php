@@ -1,34 +1,5 @@
 @extends('layouts.footer')
-<style>
-    .swal-button {
-    background-color: #bc985f !important;
-    color: #fff;
-    border: none;
-    box-shadow: none;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 10px 24px;
-    margin: 0;
-    cursor: pointer;
-}
-.mt-21{
-    margin-top:21px;
-}
-.mb-5{
-    margin-bottom:25px;
-}
-.form-heading{
-    font-size:20px;
-    font-weight:600;
-}
-.inputSpan input, .inputSpan select {
-    height:40px;
-}
-.inputSpan i{
-top:13px !important;
-}
-</style>
+
 @extends('layouts.header')
 @section('title')
     Contact
@@ -61,8 +32,8 @@ top:13px !important;
            <div class="row">
                <div class="col-lg-8 mx-auto">
                    <div class="rightDiv">
-                   <h5 class="mb-5 form-heading">Aplication Form plots and house</h5>
-                    <form class="" method="post" action="{{url('application_form_submit')}}">
+                   <h5 class="mb-20 form-heading">Aplication Form plots and house</h5>
+                    <form class="" method="post" id="application__form" action="{{url('application_form_submit')}}">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">
@@ -212,20 +183,21 @@ top:13px !important;
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-3 mt-21">
-                                <div class="" id="monthly_installment">
+                            <div class="col-lg-3 mt-21 pr-lg-0">
+                                <div class="inputSpan" id="monthly_installment">
+                                    <i class="fa fa-money" aria-hidden="true"></i>
                                     <input name="monthly_installment" type="text" class="form-control" required placeholder="Monthly Installment">
                                 </div>
                             </div>
                             <div class="col-lg-3 mt-21">
-                                <div class="inputSpan" id="monthly_installment">
-                                    <i class="fa fa-money" aria-hidden="true"></i>
-                                    <select class="custom-select form-control decor" name="ruppes" required>
-                                        <option  value="Hazar">Hazar</option>
-                                        <option  value="Lakh">Lakh</option>
-                                        <option  value="Crore">Crore</option>
-                                    </select>
-
+                                <div class="inputSpan">
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                                <select class="custom-select form-control decor" name="ruppes" required>
+                                    <option  value="">Select ruppes</option>
+                                    <option  value="Hazar">Hazar</option>
+                                    <option  value="Lakh">Lakh</option>
+                                    <option  value="Crore">Crore</option>
+                                </select>
                             </div>
                             </div>
                             <div class="col-lg-6 mt-21">
@@ -237,15 +209,13 @@ top:13px !important;
                         <div class="row mt-30">
                             <div class="col-lg-12">
                                 <button class="formSubmitBtn mr-20" type="submit" disabled>Submit</button>
-                                <div style="display: none" id="show_message">
-                                        <p class="text-success mt-20 "></p>
-                                        <a href="javascript:void(0)" class="nav_helper_links reload">Interested in Investment Opportunities
-                                            <i class="fa fa-arrow-right"></i>
-                                        </a>
-                                        <a href="{{url('/')}}" class="nav_helper_links">
-                                            Home Page  <i class="fa fa-arrow-right"></i>
-                                        </a>
-
+                                <div class="mt-20" style="display: none" id="show_message">
+                                    <a href="javascript:void(0)" class="nav_helper_links reload">Interested in Investment Opportunities
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                    <a href="{{url('/')}}" class="nav_helper_links">
+                                        Home Page  <i class="fa fa-arrow-right"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -255,43 +225,8 @@ top:13px !important;
            </div>
        </div>
     </div>
-    <script>
-        $(document).ready(() => {
-            $('#intrested_dropdown').change((e) => {
-               $('.Intrested-more-field').hide();
-               $('.Intrested-more-field input').val("");
-               $('#'+e.target.value).show();
-            })
-            $('a.reload').click(()=>{
-                window.location.reload();
-            })
-            for(let i=0; i<50; i++){
-                let key = parseInt(i) + parseInt(1)
-                $('#down_payment select').append('<option value='+key+'>'+key+"%"+'</option>')
-            }
-            $('input[name="accept_terms_condition"]').change(function(){
-                if($(this).prop('checked')==true){
-                    $('.formSubmitBtn').prop('disabled',false);
-                }else{
-                    $('.formSubmitBtn').prop('disabled',true);
-                }
-            })
-            $('form').submit(function(e){
-                e.preventDefault();
-                data = $("form").serialize();
-
-                $.ajax({
-                type:'POST',
-                url:"{{ route('application-form-submit') }}",
-                data: data,
-                success:function(data) {
-                    $("#show_message").show();
-                    $(".text-success").html(data.message);
-                    $('form').trigger("reset");
-                    }
-                });
-            })
-        })
-    </script>
+    <input type="hidden" value="{{url('/')}}" id="base_url" />
+    <script src="{{asset('assets/js/sweetalert.min.js')}}"></script>
+    <script src="{{asset('assets/js/application_form.js')}}"></script>
 
 @endsection
