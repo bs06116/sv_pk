@@ -193,7 +193,7 @@
                                 <div class="inputSpan">
                                 <i class="fa fa-money" aria-hidden="true"></i>
                                 <select class="custom-select form-control decor" name="ruppes" required>
-                                    <option  value="">Select ruppes</option>
+                                    <option  value="" disabled selected>Select ruppes</option>
                                     <option  value="Hazar">Hazar</option>
                                     <option  value="Lakh">Lakh</option>
                                     <option  value="Crore">Crore</option>
