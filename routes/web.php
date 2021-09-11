@@ -244,7 +244,7 @@ Route::get('/contact', function () {
 Route::get('/application_form', function () {
     return view('application_form');
 });
-Route::post('/application_form_submit', 'userController@ApplicationStore')->name('application-form-submit');
+Route::post('/application_form_submit', 'UserController@ApplicationStore')->name('application-form-submit');
 // Route::post('ads','AdsController@index');
 //controller
 Route::resource('contact', 'ContactController');

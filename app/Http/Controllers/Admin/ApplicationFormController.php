@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\ApplicationForm;
 use Illuminate\Http\Request;
 use Toastr;
 use App\Models\ImageHelper;
@@ -31,7 +31,7 @@ class ApplicationFormController extends Controller
             $skip = request('start');
             $take = request('length');
             $search = request('search');
-            $query = User::query();
+            $query = ApplicationForm::query();
             $recordsTotal = $query->count();
             if (isset($search['value'])) {
                 $query->where(function ($q) use ($search) {
@@ -40,9 +40,9 @@ class ApplicationFormController extends Controller
             }
             $recordsFiltered = $query->count();
             $data = $query->orderBy($order_by, $order_dir)->skip($skip)->take($take)->get();
-            // foreach ($data as &$d) {
-            //     $d->action = view("admin.polls._dt_action", compact('d'))->render();
-            // }
+            foreach ($data as &$d) {
+                $d->monthly_installment = $d->monthly_installment .' '. $d->ruppes ;
+            }
             return [
                 "draw" => request('draw'),
                 "recordsTotal" => $recordsTotal,
