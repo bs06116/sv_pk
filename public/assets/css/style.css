@@ -2614,7 +2614,7 @@ top:13px !important;
     .col-md-6{
         width:50%;
     }
-    .border-skew:before{
+    .border-skew-md:before{
         content: "";
         height: 100%;
         width: 2px;
@@ -2624,6 +2624,9 @@ top:13px !important;
         background: #fff;
         transform: skewX(341deg);
     }
+}
+.position-static{
+    position:static !important;
 }
 .px-30{
     padding-left:30px;

@@ -1341,7 +1341,7 @@
                 <div class="col-md-6 px-30">
                     <a href="{{url('/application_form?application=plots_house')}}" class="bg-theme-brown form-modal-button">Aplication Form plots and house</a>
                 </div>
-                <div class="col-md-6 mt-xs-20 px-30 border-skew-md">
+                <div class="col-md-6 mt-xs-20 px-30 border-skew-md position-static">
                     <a href="{{url('/application_form?application=form_investment')}}" class="bg-theme-brown form-modal-button">Aplication Form Investment</a>
                 </div>
             </div>    
