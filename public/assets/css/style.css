@@ -2607,6 +2607,10 @@ top:13px !important;
     #application_form_popup .modal-dialog{
         width:725px !important;
     }
+    .px-md-30{
+        padding-left:30px !important;
+        padding-right:30px !important;
+    }
     #application_form_popup .modal-body{
         padding-top:70px;
         padding-bottom:70px;
@@ -2629,8 +2633,8 @@ top:13px !important;
     position:static !important;
 }
 .px-30{
-    padding-left:30px;
-    padding-right:30px;
+    padding-left:30px !important;
+    padding-right:30px !important;
 }
 .border-skew:before{
     content: "";
@@ -2655,6 +2659,9 @@ top:13px !important;
 }
 .mr-20{
     margin-right:20px;
+}
+.text-decoration-none{
+    text-decoration: none !important;
 }
 #application_form_popup{
     align-items: center;
