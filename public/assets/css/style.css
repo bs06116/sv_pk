@@ -2598,6 +2598,11 @@ top:13px !important;
     letter-spacing: 1px;
     font-size: 13px;
 }
+@media only screen and (max-width:767px) and (min-width:1px){
+    .mt-xs-20{
+        margin-top:20px;
+    }
+}
 @media(min-width:768px){
     #application_form_popup .modal-dialog{
         width:725px !important;
@@ -2605,6 +2610,19 @@ top:13px !important;
     #application_form_popup .modal-body{
         padding-top:70px;
         padding-bottom:70px;
+    }
+    .col-md-6{
+        width:50%;
+    }
+    .border-skew:before{
+        content: "";
+        height: 100%;
+        width: 2px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        background: #fff;
+        transform: skewX(341deg);
     }
 }
 .px-30{
@@ -2634,6 +2652,13 @@ top:13px !important;
 }
 .mr-20{
     margin-right:20px;
+}
+#application_form_popup{
+    align-items: center;
+    justify-content: center;
+}
+#application_form_popup.fade.in{
+  display:flex !important;
 }
 #application_form_popup .modal-dialog p{
     margin-bottom: 0;
