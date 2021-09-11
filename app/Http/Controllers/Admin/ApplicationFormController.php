@@ -40,9 +40,9 @@ class ApplicationFormController extends Controller
             }
             $recordsFiltered = $query->count();
             $data = $query->orderBy($order_by, $order_dir)->skip($skip)->take($take)->get();
-            // foreach ($data as &$d) {
-            //     $d->action = view("admin.polls._dt_action", compact('d'))->render();
-            // }
+            foreach ($data as &$d) {
+                $d->monthly_installment = $d->monthly_installment .' '. $d->ruppes ;
+            }
             return [
                 "draw" => request('draw'),
                 "recordsTotal" => $recordsTotal,
