@@ -10,8 +10,8 @@
                 <table class="table table-bordered dt-responsive nowrap table-responsive datatable data-table">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>User Name</th>
+                            <th>Name</th>
+                            <th>Gender</th>
                             <th>Email</th>
                         </tr>
                     </thead>
@@ -39,10 +39,7 @@
                         //  d.search = $('input[type="search"]').val()
                     }
                 },
-                columns: [{
-                        data: 'id',
-                        name: 'id'
-                    },
+                columns: [
                     {
                         data: 'name',
                         name: 'name'

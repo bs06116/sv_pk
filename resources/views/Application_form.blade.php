@@ -99,7 +99,6 @@
                             </div>
                             <div class="col-lg-6 mt-21">
                                 <div class="inputSpan">
-                                <i class="fa fa-heart" aria-hidden="true"></i>
                                 <select class="custom-select form-control decor" id="intrested_dropdown" name="intrested_in" required>
                                     <option name="subject" selected disabled value="" >Intrested In</option>
                                     <option name="subject" value="House">House</option>
@@ -131,7 +130,6 @@
                                 </div>
                                 <div class="inputSpan Intrested-more-field" id="Plot" style="display:none;">
                                     <i class="fa fa-area-chart" aria-hidden="true"></i>
-
                                     <input name="size" type="text" class="form-control" placeholder="Size" />
                                     <div class="inputSpan mt-21">
                                         <i class="fa fa-arrows" aria-hidden="true"></i>
@@ -186,7 +184,7 @@
                             <div class="col-lg-3 mt-21 pr-lg-0">
                                 <div class="inputSpan" id="monthly_installment">
                                     <i class="fa fa-money" aria-hidden="true"></i>
-                                    <input name="monthly_installment" type="text" class="form-control" required placeholder="Monthly Installment">
+                                    <input name="monthly_installment" type="number" class="form-control" required placeholder="Monthly Installment">
                                 </div>
                             </div>
                             <div class="col-lg-3 mt-21">
