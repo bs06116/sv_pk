@@ -112,17 +112,17 @@
                             </div>
                             <div class="col-lg-6 mt-21">
                                 <div class="inputSpan Intrested-more-field" id="House" style="display:none;">
-                                    <i class="fa fa-area-chart" aria-hidden="true"></i>
-                                    <input name="size" type="text" class="form-control" placeholder="Size" />
+                                    <i class="fa fa-arrows" aria-hidden="true"></i>
+                                    <select class="custom-select form-control decor" name="land_area">
+                                        <option value="Kanal">Kanal</option>
+                                        <option value="Marla">Marla</option>
+                                        <option value="Sq.yd">Square yard</option>
+                                        <option value="Sq.ft">Square Feet</option>
+                                    </select>
                                     <div class="inputSpan mt-21">
-                                        <i class="fa fa-arrows" aria-hidden="true"></i>
-                                        <select class="custom-select form-control decor" name="land_area">
-                                            <option value="Kanal">Kanal</option>
-                                            <option value="Marla">Marla</option>
-                                            <option value="Sq.yd">Square yard</option>
-                                            <option value="Sq.ft">Square Feet</option>
-                                        </select>
-                                    </div>
+                                        <i class="fa fa-area-chart" aria-hidden="true"></i>
+                                        <input name="size" type="text" class="form-control" placeholder="Size" />
+                                    </div>    
                                 </div>
                                 <div class="inputSpan Intrested-more-field" id="Apartment" style="display:none;">
                                     <i class="fa fa-area-chart" aria-hidden="true"></i>

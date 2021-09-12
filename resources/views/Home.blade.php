@@ -1337,12 +1337,12 @@
         <h4 class="modal-title text-white text-center">Application Forms</h4>
       </div>
         <div class="modal-body">
-            <div class="d-flex">
-                <div class="w-50 px-30">
-                    <a href="{{url('/application_form?application=plots_house')}}" class="bg-theme-brown form-modal-button">Aplication Form plots and house</a>
+            <div class="row">
+                <div class="col-md-6 px-md-30">
+                    <a href="{{url('/application_form?application=plots_house')}}" class="bg-theme-brown form-modal-button text-decoration-none">Aplication Form plots and house</a>
                 </div>
-                <div class="w-50 px-30 border-skew">
-                    <a href="{{url('/application_form?application=form_investment')}}" class="bg-theme-brown form-modal-button">Aplication Form Investment</a>
+                <div class="col-md-6 mt-xs-20 px-md-30 border-skew-md position-static">
+                    <a href="{{url('/application_form?application=form_investment')}}" class="bg-theme-brown form-modal-button text-decoration-none">Aplication Form Investment</a>
                 </div>
             </div>
         </div>
