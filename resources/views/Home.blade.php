@@ -35,8 +35,8 @@
                                                     @php
                                      $count=App\Models\Seller::where('allp','=','1')->count();
                                @endphp
-                              
-                                    <h3 style="font-size: 22px;">Search properties anywhere in Pakistan: <span style="color: #BC985F;"><b>{{ $count }}</b></span></h3> 
+
+                                    <h3 style="font-size: 22px;">Search properties anywhere in Pakistan: <span style="color: #BC985F;"><b>{{ $count }}</b></span></h3>
                                     <ul class="nav nav-pills">
                                         <li class="active"><a data-toggle="pill" href="#home" onclick="search_result()"><b>For Sale</b></a></li>
                                         <li><a data-toggle="pill" href="#rent" onclick="search_result_rent()" ><b>To Rent</b></a></li>
@@ -57,8 +57,8 @@
                                                     <div class="col-lg-6">
                                                         <label for="minprice"><span style="color: #1b1a2f"> Min price</span></label>
                                                          <input type="text"name="minprice"id="minprice" class="form-control" placeholder="10,000">
-                                                        
-                                                    
+
+
                                                         {{-- <input type="text" name="minprice" id="minprice" class="inputCommon"> --}}
                                                         {{-- <select name="minprice" id="minprice" class="inputCommon">
                                                             <option value="10,000">10,000</option>
@@ -78,7 +78,7 @@
                                                         <label for="">Property type</label>
                                                         <select name="purpose" class="form-control" id="purpose">
 
-                                                                <option value="all" disabled selected>Show All</option> 
+                                                                <option value="all" disabled selected>Show All</option>
                                                                 <option value="flat">Flats</option>
                                                                 <option value="house">House</option>
                                                                 <option value="land">Lands</option>
@@ -105,7 +105,7 @@
                                                             <a class="advanceSearchText">More options <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                                         </label>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </form>
                                         </div>
@@ -113,7 +113,7 @@
                                             <form method="post" action="{{route('property-search-rent')}}"enctype="multipart/form-data">
                                                 @method('GET')
                                                 {{ csrf_field() }}
-                                                
+
                                                 <div class="input-with-icon">
                                                     <input type="text"name="city"id="autocomplete-input_rent" class="form-control" placeholder="e.g Islamabad, Rawalpindi, Lahore, Karachi, Sargodah">
                                                     <i class="fa fa-search"></i>
@@ -123,7 +123,7 @@
                                                     <div class="col-lg-6">
                                                         <label for="minprice">Min price</label>
                                                          <input type="text"name="minprice"  id="minprice_rent" class="form-control" placeholder="10,000">
-                                                    
+
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="maxprice">Max price</label>
@@ -135,7 +135,7 @@
                                                         <label for="">Property type</label>
                                                         <select name="purpose" style="padding-top:5px !important;;padding-bottom:5px !important;" class="inputCommon" id="purpose_rent">
 
-                                                                <option value="all" disabled selected>Show All</option> 
+                                                                <option value="all" disabled selected>Show All</option>
                                                                 <option value="flat">Flats</option>
                                                                 <option value="house">House</option>
                                                                 <option value="land">Lands</option>
@@ -217,13 +217,13 @@
                                                     <div class="col-lg-12">
                                                         <button type="submit" value="Search" id="search-submit" class="button button--primary"> <span id="myText_rent"></span></button>
                                                     </div>
-                                                  
+
                                                 </div>
                                             </form>
                                         </div>
                                         <div id="house" class="tab-pane fade">
                                            <form class="estate" method="post" action="{{url('lease_search')}}"enctype="multipart/form-data">
-                                              
+
                                                 {{ csrf_field() }}
                                                 <div class="input-with-icon">
                                                     <input type="text"name="city"id="autocomplete-input_lease" class="form-control" placeholder="e.g Islamabad, Rawalpindi, Lahore, Karachi,Quetta">
@@ -235,8 +235,8 @@
                                                     <div class="col-lg-6">
                                                         <label for="minprice"><span style="color: #1b1a2f"> Min price</span></label>
                                                          <input type="text"name="minprice" id="minprice_lease" class="form-control" placeholder="10,000">
-                                                        
-                                                    
+
+
                                                         {{-- <input type="text" name="minprice" id="minprice" class="inputCommon"> --}}
                                                         {{-- <select name="minprice" id="minprice" class="inputCommon">
                                                             <option value="10,000">10,000</option>
@@ -256,7 +256,7 @@
                                                         <label for="">Property type</label>
                                                         <select name="purpose" class="form-control" id="purpose_lease">
 
-                                                                <option value="all" disabled selected>Show All</option> 
+                                                                <option value="all" disabled selected>Show All</option>
                                                                 <option value="flat">Flats</option>
                                                                 <option value="house">House</option>
                                                                 <option value="land">Lands</option>
@@ -276,7 +276,7 @@
                                                             <a class="advanceText">Clear All
                                                         </label>
                                                     </div>
-                                                   
+
                                                 </div>
                                                 <div class="row mb-20" id="loro" style="display:none">
                                                     <div class="col-lg-12">
@@ -284,7 +284,7 @@
                                                             <a class="advanceSearchText">More options <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                                         </label>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </form>
                                         </div>
@@ -327,7 +327,7 @@
                         <div><img src="{{asset('assets/logo/8.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/9.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/10.png')}}" alt="" class="img-responsive"></div>
-                        
+
                         <div><img src="{{asset('assets/logo/11.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/12.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/13.png')}}" alt="" class="img-responsive"></div>
@@ -338,7 +338,7 @@
                         <div><img src="{{asset('assets/logo/18.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/19.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/20.png')}}" alt="" class="img-responsive"></div>
-                        
+
                         <div><img src="{{asset('assets/logo/21.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/22.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/23.png')}}" alt="" class="img-responsive"></div>
@@ -349,8 +349,8 @@
                         <div><img src="{{asset('assets/logo/28.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/29.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/30.png')}}" alt="" class="img-responsive"></div>
-                        
-                        
+
+
                         <div><img src="{{asset('assets/logo/31.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/32.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/33.png')}}" alt="" class="img-responsive"></div>
@@ -361,7 +361,7 @@
                         <div><img src="{{asset('assets/logo/38.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/39.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/40.png')}}" alt="" class="img-responsive"></div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -381,8 +381,8 @@
                         <!--<div><img src="../../assets/img/download.png" alt="" class="img-responsive"></div>-->
                         <!--<div><img src="../../assets/img/images.jpg" alt="" class="img-responsive"></div>-->
                         <!--<div><img src="../../assets/img/images.png" alt="" class="img-responsive"></div>-->
-                        
-                        
+
+
                         <div><img src="{{asset('assets/logo/41.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/42.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/43.png')}}" alt="" class="img-responsive"></div>
@@ -393,7 +393,7 @@
                         <div><img src="{{asset('assets/logo/48.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/49.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/50.png')}}" alt="" class="img-responsive"></div>
-                        
+
                         <div><img src="{{asset('assets/logo/51.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/52.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/53.png')}}" alt="" class="img-responsive"></div>
@@ -404,7 +404,7 @@
                         <div><img src="{{asset('assets/logo/58.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/59.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/60.png')}}" alt="" class="img-responsive"></div>
-                        
+
                         <div><img src="{{asset('assets/logo/61.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/62.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/63.png')}}" alt="" class="img-responsive"></div>
@@ -415,7 +415,7 @@
                         <!--<div><img src="{{asset('assets/logo/68.png')}}" alt="" class="img-responsive"></div>-->
                         <!--<div><img src="{{asset('assets/logo/69.png')}}" alt="" class="img-responsive"></div>-->
                         <!--<div><img src="{{asset('assets/logo/70.png')}}" alt="" class="img-responsive"></div>-->
-                        
+
                         <div><img src="{{asset('assets/logo/71.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/72.png')}}" alt="" class="img-responsive"></div>
                         <div><img src="{{asset('assets/logo/73.png')}}" alt="" class="img-responsive"></div>
@@ -464,14 +464,14 @@
                         <div id="menu5" class="tab-pane fade in active">
                             <div class="your-class">
                                 @php
-                                   $cities=App\Models\Seller::where('city','=','islamabad')->where('enable','=','1')->whereRaw('MOD(id, 2) = 1')->limit(12)->inRandomOrder()->get();  
+                                   $cities=App\Models\Seller::where('city','=','islamabad')->where('enable','=','1')->whereRaw('MOD(id, 2) = 1')->limit(12)->inRandomOrder()->get();
                                 @endphp
                                 @foreach ($cities as $seller)
                                 <div class="featuresBox" style="    margin-right: 15px;
     width: 350px;">
                                     <div class="thumbnailImage">
                                         <img class="img-responsive" src="{{asset($seller->image)}}" alt="">
-                                        
+
                                         <div class="listing-badges">
                                             <span style="color: aliceblue" class="featured">Featured</span>
                                         </div>
@@ -479,7 +479,7 @@
                                              <span>
                                                   @php
                                                         $converter = new App\Convertmodel();
-                                                        $price = $converter->numberTowords($seller->price)    
+                                                        $price = $converter->numberTowords($seller->price)
                                                     @endphp
                                                   PKR:{{ $price }}
                                                    <div class="right" id="propertyrating-{{$seller->id}}"></div>
@@ -497,7 +497,7 @@
                                     <ul class="facilities-list clearfix">
                                         @if ($seller->size!= '0')
                                         <li>
-                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }} 
+                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }}
                                         </li>
                                          @endif
                                          @if ($seller->bedroom!= '0')
@@ -523,7 +523,7 @@
                                         <li>
                                              @php
                                                 $converter = new App\Convertmodel();
-                                                $price = $converter->numberTowords($seller->price)    
+                                                $price = $converter->numberTowords($seller->price)
                                             @endphp
                                             <span style="color: #1B1A2F">PKR:</span>  {{$price}}
                                         </li>
@@ -539,20 +539,20 @@
                                     </div> --}}
                                 </div>
                                 @endforeach
-                                
-                                
-                                
+
+
+
                             </div>
                             <div class="your-class">
                                 @php
-                                   $cities=App\Models\Seller::where('city','=','islamabad')->where('enable','=','1')->whereRaw('MOD(id, 2) = 0')->limit(12)->inRandomOrder()->get();  
+                                   $cities=App\Models\Seller::where('city','=','islamabad')->where('enable','=','1')->whereRaw('MOD(id, 2) = 0')->limit(12)->inRandomOrder()->get();
                                 @endphp
                                 @foreach ($cities as $seller)
                                 <div class="featuresBox"style="    margin-right: 15px;
     width: 350px;">
                                     <div class="thumbnailImage">
                                         <img class="img-responsive" src="{{asset($seller->image)}}" alt="">
-                                        
+
                                         <div class="listing-badges">
                                             <span style="color: aliceblue" class="featured">Featured</span>
                                         </div>
@@ -574,7 +574,7 @@
                                     <ul class="facilities-list clearfix">
                                         @if ($seller->size!= '0')
                                         <li>
-                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }} 
+                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }}
                                         </li>
                                          @endif
                                          @if ($seller->bedroom!= '0')
@@ -600,7 +600,7 @@
                                         <li>
                                              @php
                                         $converter = new App\Convertmodel();
-                                        $price = $converter->numberTowords($seller->price)    
+                                        $price = $converter->numberTowords($seller->price)
                                     @endphp
                                             <span style="color: #1B1A2F">PKR:</span>  {{$price}}
                                         </li>
@@ -616,15 +616,15 @@
                                     </div> --}}
                                 </div>
                                 @endforeach
-                                
-                                
-                                
+
+
+
                             </div>
                         </div>
                         <div id="menu1" class="tab-pane fade">
                             <div class="your-class">
                                 @php
-                                   $cities=App\Models\seller::where('city','=','lahore')->where('enable','=','1')->limit(12)->get();  
+                                   $cities=App\Models\seller::where('city','=','lahore')->where('enable','=','1')->limit(12)->get();
                                 @endphp
                                 @foreach ($cities as $seller)
                                 {{-- @foreach (App\Models\Seller::all() as $seller) --}}
@@ -653,7 +653,7 @@
                                         <ul class="facilities-list clearfix">
                                         @if ($seller->size!= '0')
                                         <li>
-                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }} 
+                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }}
                                         </li>
                                          @endif
                                          @if ($seller->bedroom!= '0')
@@ -672,7 +672,7 @@
                                         </li>
                                         @endif
                                         <li>
-                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;">PKR:</span> 
+                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;">PKR:</span>
                                             {{ number_format($seller->price) }}
                                         </li>
                                     </ul>
@@ -681,7 +681,7 @@
                             </div>
                             <div class="your-class">
                                 @php
-                                   $cities=App\Models\seller::where('city','=','lahore')->where('enable','=','1')->limit(12)->whereRaw('MOD(id, 2) = 1')->get();  
+                                   $cities=App\Models\seller::where('city','=','lahore')->where('enable','=','1')->limit(12)->whereRaw('MOD(id, 2) = 1')->get();
                                 @endphp
                                 @foreach ($cities as $seller)
                                 {{-- @foreach (App\Models\Seller::all() as $seller) --}}
@@ -710,7 +710,7 @@
                                         <ul class="facilities-list clearfix">
                                         @if ($seller->size!= '0')
                                         <li>
-                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }} 
+                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }}
                                         </li>
                                          @endif
                                          @if ($seller->bedroom!= '0')
@@ -729,21 +729,21 @@
                                         </li>
                                         @endif
                                         <li>
-                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;">PKR:</span> 
+                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;">PKR:</span>
                                             {{ number_format($seller->price) }}
                                         </li>
                                     </ul>
                                 </div>
                                 @endforeach
                             </div>
-                            
+
                         </div>
                         <div id="menu2" class="tab-pane fade">
                          <div class="karachi-class">
                              @php
-                                   $cities=App\Models\seller::where('city','=','karachi')->where('enable','=','1')->whereRaw('MOD(id, 2) = 0')->limit(12)->get();  
+                                   $cities=App\Models\seller::where('city','=','karachi')->where('enable','=','1')->whereRaw('MOD(id, 2) = 0')->limit(12)->get();
                                 @endphp
-                                @foreach ($cities as $seller) 
+                                @foreach ($cities as $seller)
                                 <div class="featuresBox">
                                     <div class="thumbnailImage">
                                         <img class="img-responsive" src="{{asset($seller->image)}}" alt="">
@@ -766,7 +766,7 @@
                                         <ul class="facilities-list clearfix">
                                         @if ($seller->size!= '0')
                                         <li>
-                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }} 
+                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }}
                                         </li>
                                          @endif
                                          @if ($seller->bedroom!= '0')
@@ -785,7 +785,7 @@
                                         </li>
                                         @endif
                                         <li>
-                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span> 
+                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span>
                                         </li>
                                     </ul>
                                     <!--<div class="footer">-->
@@ -803,7 +803,7 @@
                         <div id="menu3" class="tab-pane fade">
                             <div class="your-class">
                                 @php
-                                   $cities=App\Models\seller::where('city','=','Peshwar')->where('enable','=','1')->whereRaw('MOD(id, 2) = 1')->limit(12)->get();  
+                                   $cities=App\Models\seller::where('city','=','Peshwar')->where('enable','=','1')->whereRaw('MOD(id, 2) = 1')->limit(12)->get();
                                 @endphp
                                 @foreach ($cities as $seller)
                                 {{-- @foreach (App\Models\Seller::all() as $seller) --}}
@@ -826,7 +826,7 @@
                                         <ul class="facilities-list clearfix">
                                         @if ($seller->size!= '0')
                                         <li>
-                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }} 
+                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }}
                                         </li>
                                          @endif
                                          @if ($seller->bedroom!= '0')
@@ -845,7 +845,7 @@
                                         </li>
                                         @endif
                                         <li>
-                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span> 
+                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -853,7 +853,7 @@
                             </div>
                             <div class="your-class">
                                 @php
-                                   $cities=App\Models\seller::where('city','=','Peshwar')->where('enable','=','1')->whereRaw('MOD(id, 2) = 0')->limit(12)->get();  
+                                   $cities=App\Models\seller::where('city','=','Peshwar')->where('enable','=','1')->whereRaw('MOD(id, 2) = 0')->limit(12)->get();
                                 @endphp
                                 @foreach ($cities as $seller)
                                 {{-- @foreach (App\Models\Seller::all() as $seller) --}}
@@ -876,7 +876,7 @@
                                         <ul class="facilities-list clearfix">
                                         @if ($seller->size!= '0')
                                         <li>
-                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }} 
+                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }}
                                         </li>
                                          @endif
                                          @if ($seller->bedroom!= '0')
@@ -895,7 +895,7 @@
                                         </li>
                                         @endif
                                         <li>
-                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span> 
+                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -906,7 +906,7 @@
                         <div id="menu4" class="tab-pane fade">
                             <div class="your-class">
                                 @php
-                                   $cities=App\Models\seller::where('city','=','Quetta')->whereRaw('MOD(id, 2) = 0')->limit(12)->get();  
+                                   $cities=App\Models\seller::where('city','=','Quetta')->whereRaw('MOD(id, 2) = 0')->limit(12)->get();
                                 @endphp
                                 @foreach ($cities as $seller)
                                 {{-- @foreach (App\Models\Seller::all() as $seller) --}}
@@ -935,7 +935,7 @@
                                         <ul class="facilities-list clearfix">
                                         @if ($seller->size!= '0')
                                         <li>
-                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }} 
+                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }}
                                         </li>
                                          @endif
                                          @if ($seller->bedroom!= '0')
@@ -954,7 +954,7 @@
                                         </li>
                                         @endif
                                         <li>
-                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span> 
+                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -962,7 +962,7 @@
                             </div>
                             <div class="your-class">
                                 @php
-                                   $cities=App\Models\seller::where('city','=','Quetta')->whereRaw('MOD(id, 2) = 1')->limit(12)->get();  
+                                   $cities=App\Models\seller::where('city','=','Quetta')->whereRaw('MOD(id, 2) = 1')->limit(12)->get();
                                 @endphp
                                 @foreach ($cities as $seller)
                                 {{-- @foreach (App\Models\Seller::all() as $seller) --}}
@@ -991,7 +991,7 @@
                                         <ul class="facilities-list clearfix">
                                         @if ($seller->size!= '0')
                                         <li>
-                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }} 
+                                            <span style="color:#1B1A2F">Area</span>{{ ucfirst($seller->size) }} &nbsp;{{ ucfirst($seller->area) }}
                                         </li>
                                          @endif
                                          @if ($seller->bedroom!= '0')
@@ -1010,7 +1010,7 @@
                                         </li>
                                         @endif
                                         <li>
-                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span> 
+                                            <span style="color: #1B1A2F;float: right;position: relative;right: -153px;"> Price:  {{ ucfirst($seller->price) }}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -1151,7 +1151,7 @@
                     <a href="{{route('Gujranwala')}}"class="imgBg" style="background-image: url('assets/img/Gujranwala 2.png');">
                         <div class="image-link__overlay">
                             <div class="image-link__text">Gujranwala</div>
-                        </div> 
+                        </div>
                     </a>
                 </div>
             </div>
@@ -1237,7 +1237,7 @@
                             <div class="avatar">
                                 <img src="{{asset('assets/img/Shakir.jpg')}}" alt=""class="rounded-circle">
                             </div>
-                        
+
                         </div>
                         <h5>
                             <a>Majeed Shakir</a>
@@ -1250,7 +1250,7 @@
                             <div class="avatar">
                                 <img src="{{asset('assets/img/Bilal.jpg')}}" alt=""class="rounded-circle">
                             </div>
-                        
+
                         </div>
                         <h5>
                             <a>M. Bilal Shams</a>
@@ -1263,7 +1263,7 @@
 <!--                            <div class="avatar">-->
 <!--                                <img src="{{asset('assets/img/prim.png')}}" alt=""class="rounded-circle">-->
 <!--                            </div>-->
-                        
+
 <!--                        </div>-->
 <!--                        <h5>-->
 <!--                            <a>Prime Deal</a>-->
@@ -1276,7 +1276,7 @@
                             <div class="avatar">
                                 <img src="{{asset('assets/img/Homelan.jpg')}}" alt="">
                             </div>
-                        
+
                         </div>
                         <h5>
                             <a>Homeland Properties</a>
@@ -1289,7 +1289,7 @@
 <!--                            <div class="avatar">-->
 <!--                                <img src="{{asset('assets/img/Multivision.png')}}" alt="">-->
 <!--                            </div>-->
-                        
+
 <!--                        </div>-->
 <!--                        <h5>-->
 <!--                            <a>Multivision</a>-->
@@ -1315,7 +1315,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="newsFormDiv">
-                   
+
                     <form action="{{route('newsletter') }}" method="post">
                       @csrf
                         <input type="email"name="user_email" placeholder="Enter Your E-mail" required="">
@@ -1327,7 +1327,7 @@
     </div>
 </div>
 <!-- Modal -->
-<div id="application_form_popup" class="modal fade" role="dialog">
+{{-- <div id="application_form_popup" class="modal fade" role="dialog">
   <div class="modal-dialog left-0">
 
     <!-- Modal content-->
@@ -1337,18 +1337,18 @@
         <h4 class="modal-title text-white text-center">Application Forms</h4>
       </div>
         <div class="modal-body">
-            <div class="d-flex"> 
+            <div class="d-flex">
                 <div class="w-50 px-30">
                     <a href="{{url('/application_form?application=plots_house')}}" class="bg-theme-brown form-modal-button">Aplication Form plots and house</a>
                 </div>
                 <div class="w-50 px-30 border-skew">
                     <a href="{{url('/application_form?application=form_investment')}}" class="bg-theme-brown form-modal-button">Aplication Form Investment</a>
                 </div>
-            </div>    
+            </div>
         </div>
     </div>
   </div>
-</div>
+</div> --}}
 <script src="{{asset('new/assets/js/app.js')}}"></script>
   <script src="{{asset('new/toastr/toastr.min.js')}}"></script>
 
@@ -1377,22 +1377,22 @@ $('#purpose').change(function() {
         search_result();
 })
   $('#minprice_rent').keyup(function() {
-      
+
         search_result_rent();
 })
   $('#mixprice_rent').keyup(function() {
         search_result_rent();
 })
  $('#autocomplete-input_rent').keyup(function() {
-      
+
            search_result_rent();
 })
  $('#bed_rent').keyup(function() {
-  
+
         search_result_rent();
 })
 $('#purpose_rent').change(function() {
-     
+
         search_result_rent();
 })
 
@@ -1400,16 +1400,16 @@ $('#purpose_rent').change(function() {
         search_result_lease();
 })
   $('#mixprice_lease').keyup(function() {
-          
+
 
         search_result_lease();
 })
  $('#autocomplete-input_lease').keyup(function() {
-         
+
            search_result_lease();
 })
  $('#bed_lease').keyup(function() {
- 
+
         search_result_lease();
 })
 $('#purpose_lease').change(function() {
@@ -1419,15 +1419,15 @@ $('#purpose_lease').change(function() {
 function search_result_lease(){
     // alert('dhsfgsdj');
     var purpose=document.getElementById("purpose_lease").value;
-    
+
     var bedroom=document.getElementById("bed_lease").value;
- 
+
     var min_price=document.getElementById("minprice_lease").value;
-      
+
     var city=document.getElementById("autocomplete-input_lease").value;
-     
+
     var max_price = document.getElementById("mixprice_lease").value;
-    
+
     let _token   = $('meta[name="csrf-token"]').attr('content');
     let cat=3;
        $.ajax({
@@ -1444,7 +1444,7 @@ function search_result_lease(){
         },
       success: function(response) {
         document.getElementById("myText_lease").innerHTML = "Search "+response+" Properties";
-        
+
       }
     })
  }
@@ -1478,12 +1478,12 @@ function search_result_lease(){
  }
 
  function search_result(){
-   
+
     var min_price=document.getElementById("minprice").value;
     var city=document.getElementById("autocomplete-input").value;//alert(city);
     var max_price = document.getElementById("mixprice").value;
     var purpose=document.getElementById("purpose").value;
- 
+
     var bedroom=document.getElementById("bed").value;
     let _token   = $('meta[name="csrf-token"]').attr('content');
     let cat=document.getElementById("cat").value;
@@ -1501,7 +1501,7 @@ function search_result_lease(){
           _token: _token
         },
       success: function(response) {
-       
+
     console.log(response);
         document.getElementById("myText").innerHTML = "Search "+response+" Properties";
       }
@@ -1515,7 +1515,7 @@ window.onload =   search_result();
     jQuery(".homeList").click(function(){
         if(jQuery(".homeList .dropdown-menu").hasClass("show")){
             jQuery(".homeList .dropdown-menu").removeClass("show");
-        } 
+        }
         else
         {
             jQuery(".homeList .dropdown-menu").addClass("show");
@@ -1526,7 +1526,7 @@ window.onload =   search_result();
     jQuery(".notification-list").click(function(){
         if(jQuery(".notification-list .dropdown-menu").hasClass("show")){
             jQuery(".notification-list .dropdown-menu").removeClass("show");
-        } 
+        }
         else
         {
             jQuery(".notification-list .dropdown-menu").addClass("show");
