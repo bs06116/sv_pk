@@ -1,43 +1,47 @@
 @extends('layouts.footer')
 @extends('layouts.header')
 <style>
-@media only screen and (max-width: 320px) {
-.listing-features-info .addReadMore {
-		    font-size: 8px ;
- }
-}
+    @media only screen and (max-width: 320px) {
+        .listing-features-info .addReadMore {
+            font-size: 8px;
+        }
+    }
 
-@media only screen and (max-width: 375px) {
-.listing-features-info .addReadMore {
-		    font-size: 10px ;
- }
-}
+    @media only screen and (max-width: 375px) {
+        .listing-features-info .addReadMore {
+            font-size: 10px;
+        }
+    }
 
-@media only screen and (max-width: 425px) {
-.listing-features-info .addReadMore {
-		    font-size: 11px ;
- }
-}
-.aboutsale {
-    background-image: url(assets/img/banner2.jpg)!important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: inherit;
-    padding: 150px 0px 150px;
-    height: 355px;
-    width: 100%;
-}
-i.fa.fa-camera {
-    color: #1b1a2f;
-}
-#pagin li a {
-    padding: 3px !important;
-}
+    @media only screen and (max-width: 425px) {
+        .listing-features-info .addReadMore {
+            font-size: 11px;
+        }
+    }
 
-.propertyInfo .listing-detail-wrapper .listing-short-detail .listing-name {
-    font-size: 16px !important;
-}
+    .aboutsale {
+        background-image: url(assets/img/banner2.jpg) !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: inherit;
+        padding: 150px 0px 150px;
+        height: 355px;
+        width: 100%;
+    }
+
+    i.fa.fa-camera {
+        color: #1b1a2f;
+    }
+
+    #pagin li a {
+        padding: 3px !important;
+    }
+
+    .propertyInfo .listing-detail-wrapper .listing-short-detail .listing-name {
+        font-size: 16px !important;
+    }
+
     .addReadMore .readMore,
     .addReadMore .readLess {
         font-weight: bold;
@@ -87,28 +91,32 @@ i.fa.fa-camera {
         display: block;
     }
 
-    #pagin{
+    #pagin {
         padding: 0px;
-    margin: 50px 0px 0px;
-}
-#pagin li {
-  display: inline-block;
-  
-}
-#pagin li a.current{
-    text-align: center;
-    vertical-align: middle;
-    background: #8a6d3b;
-    padding: 5px 12px;
-    color: #fff;
-}
-#pagin li a{
-    text-align: center;
-    vertical-align: middle;
-    background: #80808038;
-    padding: 5px 12px;
-    color: #000;
-}
+        margin: 50px 0px 0px;
+    }
+
+    #pagin li {
+        display: inline-block;
+
+    }
+
+    #pagin li a.current {
+        text-align: center;
+        vertical-align: middle;
+        background: #8a6d3b;
+        padding: 5px 12px;
+        color: #fff;
+    }
+
+    #pagin li a {
+        text-align: center;
+        vertical-align: middle;
+        background: #80808038;
+        padding: 5px 12px;
+        color: #000;
+    }
+
 </style>
 @section('content')
     <div class="property_list">
@@ -131,39 +139,54 @@ i.fa.fa-camera {
                             <div class="row">
                                 <div class="col-lg-6">
                                     @php
-                                    $count=App\Models\Seller::where('type','=','Sale')->count();
-                               
-                                      
-
+                                        $count = App\Models\Seller::where('type', '=', 'Sale')->count();
 
                                     @endphp
                                     <h4>Total Properties:<span class="theme-cl">{{ $count }}</span></h4>
-                                    
+
                                 </div>
-                                <!--<h1>{{$filter}}</h1>-->
+                                <!--<h1>{{ $filter }}</h1>-->
                                 <div class="col-lg-6 text-right">
                                     <label class="col-lg-6 text-right" style="padding:10px 0px 10px;">Sort by:</label>
                                     <select name="" id="filter_select" class="inputCommon">
-                                         
+
                                         <option value="">Relevance</option>
-                                        <option  @php if($filter=="lowest-price"){echo "selected"; } @endphp value="{{route('property-sale',['filter'=>'lowest-price'])}}">Lowest price</option>
-                                        <option @php if($filter=="highest-price"){echo "selected"; } @endphp  value="{{route('property-sale',['filter'=>'highest-price'])}}">Highest price</option>
-                                        <option @php if($filter=="most-recent"){echo "selected"; } @endphp   value="{{route('property-sale',['filter'=>'most-recent'])}}">Most Recent</option>
+                                        <option @php
+                                            if ($filter == 'lowest-price') {
+                                                echo 'selected';
+                                            }
+                                        @endphp
+                                            value="{{ route('property-sale', ['filter' => 'lowest-price']) }}">Lowest price
+                                        </option>
+                                        <option @php
+                                            if ($filter == 'highest-price') {
+                                                echo 'selected';
+                                            }
+                                        @endphp
+                                            value="{{ route('property-sale', ['filter' => 'highest-price']) }}">Highest price
+                                        </option>
+                                        <option @php
+                                            if ($filter == 'most-recent') {
+                                                echo 'selected';
+                                            }
+                                        @endphp
+                                            value="{{ route('property-sale', ['filter' => 'most-recent']) }}">Most Recent
+                                        </option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                              
+
                                 @foreach ($cities as $seller)
 
 
                                     <div class="listCard">
                                         <div class="propertyImage">
-                                           
+
                                             <a>
-                                              
+
                                                 <img src="{{ asset($seller->image) }}" alt="">
                                             </a>
                                             {{-- <div class="listing-like-top">
@@ -176,30 +199,35 @@ i.fa.fa-camera {
                                                 <i class="fa fa-star-o" aria-hidden="true"></i>
                                                 <i class="fa fa-star-o" aria-hidden="true"></i>
                                             </div> --}}
-                                            
-                                              @php
-                                                         $count1=App\Models\Seller::where('id',$seller->id)->count();
-                                                         $count2=App\Models\Gallery::where('seller_id',$seller->id)->count();
-                                                         $sum=$count1+$count2
-                                                    @endphp
-<span class="property-type" style="left: 250px;top: 13px;">{{ ucfirst($seller->type) }} </span>
- 
-                                         <span class="tag"style="position: absolute; position: absolute;right: 242px;top: 14px;color: #0f0f0f;padding: 4px 15px;border-radius: 50px;font-size: 12px;text-transform: uppercase;background: #1010108f;"><a href=""> <i class="fa fa-camera" aria-hidden="true" style="color: #f9f9fb;">&nbsp;&nbsp;<b>{{ $sum }}</b>
-                                            
-                                         </i></a>
-                                                  
-                                         </span>
-                                        
+
+                                            @php
+                                                $count1 = App\Models\Seller::where('id', $seller->id)->count();
+                                                $count2 = App\Models\Gallery::where('seller_id', $seller->id)->count();
+                                                $sum = $count1 + $count2;
+                                            @endphp
+                                            <span class="property-type"
+                                                style="left: 250px;top: 13px;">{{ ucfirst($seller->type) }} </span>
+
+                                            <span class="tag"
+                                                style="position: absolute; position: absolute;right: 242px;top: 14px;color: #0f0f0f;padding: 4px 15px;border-radius: 50px;font-size: 12px;text-transform: uppercase;background: #1010108f;"><a
+                                                    href=""> <i class="fa fa-camera" aria-hidden="true"
+                                                        style="color: #f9f9fb;">&nbsp;&nbsp;<b>{{ $sum }}</b>
+
+                                                    </i></a>
+
+                                            </span>
+
                                         </div>
-                                       <div class="propertyInfo" style="
-    margin-top: -8px;
-">
+                                        <div class="propertyInfo" style="
+        margin-top: -8px;
+    ">
                                             <div class="listing-detail-wrapper">
                                                 <div class="listing-short-detail">
                                                     <h4 class="listing-name">
-                                                        <a href="{{ route('seller.show', $seller->id) }}">{{ ucfirst($seller->name) }}</a>
+                                                        <a
+                                                            href="{{ route('seller.show', $seller->id) }}">{{ ucfirst($seller->name) }}</a>
                                                     </h4>
-                                                
+
                                                     <span class="listing-location"><i
                                                             class="fa fa-map-marker"></i>{{ ucfirst($seller->address) }},
                                                         {{ ucfirst($seller->city) }}</span>
@@ -211,38 +239,46 @@ i.fa.fa-camera {
                                                 </div> --}}
                                             </div>
                                             <div class="listing-features-info">
-                                               <ul style="
-    margin-top: -14px;
-">
-                                                    @if ($seller->bedroom!=0)
-                                                    <li><strong><i class="fa fa-bed" aria-hidden="true"></i>&nbsp;</strong> {{ ucfirst($seller->bedroom) }}</li>
+                                                <ul style="
+        margin-top: -14px;
+    ">
+                                                    @if ($seller->bedroom != 0)
+                                                        <li><strong><i class="fa fa-bed"
+                                                                    aria-hidden="true"></i>&nbsp;</strong>
+                                                            {{ ucfirst($seller->bedroom) }}</li>
                                                     @endif
-                                                     @if ($seller->Bath!= 0)
-                                                    <li><strong><i class="fa fa-bath" aria-hidden="true"></i>&nbsp;</strong> {{ ucfirst($seller->Bath) }}</li>
+                                                    @if ($seller->Bath != 0)
+                                                        <li><strong><i class="fa fa-bath"
+                                                                    aria-hidden="true"></i>&nbsp;</strong>
+                                                            {{ ucfirst($seller->Bath) }}</li>
                                                     @endif
-                                                     @if ($seller->size!= 0)
-                                                    <li><strong><i class="fa fa-arrows-alt text-muted mr-1"></i>&nbsp;{{ ucfirst($seller->size) }}</strong>&nbsp;&nbsp;{{ ucfirst($seller->area) }}</li>
+                                                    @if ($seller->size != 0)
+                                                        <li><strong><i
+                                                                    class="fa fa-arrows-alt text-muted mr-1"></i>&nbsp;{{ ucfirst($seller->size) }}</strong>&nbsp;&nbsp;{{ ucfirst($seller->area) }}
+                                                        </li>
                                                     @endif
                                                 </ul>
-<ul>
-                                                <span class="addReadMore showlesscontent" style="margin-top: -26px; margin-bottom: 35px;">
-                                               {{ ucfirst($seller->description) }}
-                                                </span>
-    </ul>                                            
-                                           
+                                                <ul>
+                                                    <span class="addReadMore showlesscontent"
+                                                        style="margin-top: -26px; margin-bottom: 35px;">
+                                                        {{ ucfirst($seller->description) }}
+                                                    </span>
+                                                </ul>
+
                                             </div>
-                                          
-                                           
+
+
                                             <div class="listing-footer-wrapper">
                                                 <div class="listing-price">
-                                                     @php
-                                        $converter = new App\Convertmodel();
-                                        $price = $converter->numberTowords($seller->price)    
-                                    @endphp
-                                                    <h4 class="list-pr">PKR:&nbsp;{{$price}}</h4>
+                                                    @php
+                                                        $converter = new App\Convertmodel();
+                                                        $price = $converter->numberTowords($seller->price);
+                                                    @endphp
+                                                    <h4 class="list-pr">PKR:&nbsp;{{ $price }}</h4>
                                                 </div>
                                                 <div class="listing-detail-btn">
-                                                    <a href="{{ route('seller.show', $seller->id) }}" class="more-btn">More
+                                                    <a href="{{ route('seller.show', $seller->id) }}"
+                                                        class="more-btn">More
                                                         Info</a>
                                                 </div>
                                             </div>
@@ -250,7 +286,8 @@ i.fa.fa-camera {
                                         </div>
                                     </div>
                                 @endforeach
-                                
+                                <?php echo $cities->links(); ?>
+
                             </div>
                         </div>
                     </div>
@@ -306,11 +343,11 @@ i.fa.fa-camera {
                                             {{-- <select id="ptypes"
                                                 class="form-control select2-hidden-accessible" data-select2-id="ptypes"
                                                 tabindex="-1" aria-hidden="true"> --}}
-                                                <option value="type" data-select2-id="6">Property Type</option>
-                                                <option value="rent">For Rental</option>
-                                                <option value="sale">For Sale</option>
-                                            </select>
-                                            <i class="fa fa-briefcase"></i>
+                                            <option value="type" data-select2-id="6">Property Type</option>
+                                            <option value="rent">For Rental</option>
+                                            <option value="sale">For Sale</option>
+                                        </select>
+                                        <i class="fa fa-briefcase"></i>
                                     </div>
                                 </div>
                                 {{-- <div class="form-group">
@@ -381,44 +418,43 @@ i.fa.fa-camera {
                             </form>
                             <hr>
                             <br>
-                        <br>
-                        <hr style="margin-top: -27px;">
-                        <h5 class="mb-3">Category</h5>
-                        <ul class="list-unstyled list-cat">
-                            @php
-                                $count = App\Models\Seller::where('type', '=', 'rent')->count();
-                                
-                            @endphp
-                            <li><a href="#">For Rent<span>{{ $count }}</span></a></li>
-                            @php
-                                $count = App\Models\Seller::where('type', '=', 'sale')->count();
-                                
-                            @endphp
-                            <li><a href="#">For Sale <span>{{ $count }}</span> </a></li>
-                            @php
-                                $count = App\Models\Seller::where('property', '=', 'commercial')->count();
-                                
-                            @endphp
-                            <li><a href="#">Commercial <span>{{ $count }}</span></a></li>
-                            @php
-                                $count = App\Models\Seller::where('type', '=', 'lease')->count();
-                                
-                            @endphp
-                            <li><a href="#">Lease <span>{{ $count }}</span></a></li>
-                            @php
-                                $count = App\Models\Seller::where('type', '=', 'land')->count();
-                                
-                            @endphp
-                            <li><a href="#">Land <span>{{ $count }}</span></a> </li>
-                            @php
-                                $count = App\Models\Seller::all()->count();
-                                
-                            @endphp
-                            <li><a href="#">All Property <span>{{ $count }} </span></a></li>
-                        </ul>
-                    
-                            {{-- <h5 class="mb-3">Category</h5>
-                            --}}
+                            <br>
+                            <hr style="margin-top: -27px;">
+                            <h5 class="mb-3">Category</h5>
+                            <ul class="list-unstyled list-cat">
+                                @php
+                                    $count = App\Models\Seller::where('type', '=', 'rent')->count();
+
+                                @endphp
+                                <li><a href="#">For Rent<span>{{ $count }}</span></a></li>
+                                @php
+                                    $count = App\Models\Seller::where('type', '=', 'sale')->count();
+
+                                @endphp
+                                <li><a href="#">For Sale <span>{{ $count }}</span> </a></li>
+                                @php
+                                    $count = App\Models\Seller::where('property', '=', 'commercial')->count();
+
+                                @endphp
+                                <li><a href="#">Commercial <span>{{ $count }}</span></a></li>
+                                @php
+                                    $count = App\Models\Seller::where('type', '=', 'lease')->count();
+
+                                @endphp
+                                <li><a href="#">Lease <span>{{ $count }}</span></a></li>
+                                @php
+                                    $count = App\Models\Seller::where('type', '=', 'land')->count();
+
+                                @endphp
+                                <li><a href="#">Land <span>{{ $count }}</span></a> </li>
+                                @php
+                                    $count = App\Models\Seller::all()->count();
+
+                                @endphp
+                                <li><a href="#">All Property <span>{{ $count }} </span></a></li>
+                            </ul>
+
+                            {{-- <h5 class="mb-3">Category</h5> --}}
                             {{-- <ul class="list-unstyled list-cat">
                                 <li><a href="#">Single Family <span>(45)</span></a></li>
                                 <li><a href="#">Apartment <span>(21)</span> </a></li>
@@ -433,49 +469,48 @@ i.fa.fa-camera {
             </div>
         </div>
         <script>
-            $(function(){
-              // bind change event to select
-              $('#filter_select').on('change', function () {
-                  var url = $(this).val(); // get selected value
-                  if (url) { // require a URL
-                      window.location = url; // redirect
-                  }
-                  return false;
-              });
+            $(function() {
+                // bind change event to select
+                $('#filter_select').on('change', function() {
+                    var url = $(this).val(); // get selected value
+                    if (url) { // require a URL
+                        window.location = url; // redirect
+                    }
+                    return false;
+                });
             });
         </script>
-        
- <script>
-        function AddReadMore() {
-            //This limit you can set after how much characters you want to show Read More.
-            var carLmt = 150;
-            // Text to show when text is collapsed
-            var readMoreTxt = " ... ";
-            // Text to show when text is expanded   
-            var readLessTxt = "...";
-            //Traverse all selectors with this class and manupulate HTML part to show Read More
-            $(".addReadMore").each(function() {
-                if ($(this).find(".firstSec").length)
-                    return;
-                var allstr = $(this).text();
-                if (allstr.length > carLmt) {
-                    var firstSet = allstr.substring(0, carLmt);
-                    var secdHalf = allstr.substring(carLmt, allstr.length);
-                    var strtoadd = firstSet + "<span class='SecSec'>" + secdHalf +
-                        "</span><span class='readMore'  title='Click to Show More'>" + readMoreTxt +
-                        "</span><span class='readLess' title='Click to Show Less'>" + readLessTxt + "</span>";
-                    $(this).html(strtoadd);
-                }
-            });
-            //Read More and Read Less Click Event binding
-            $(document).on("click", ".readMore,.readLess", function() {
-                $(this).closest(".addReadMore").toggleClass("showlesscontent showmorecontent");
-            });
-        }
-        $(function() {
-            //Calling function after Page Load
-            AddReadMore();
-        });
 
-    </script>
+        <script>
+            function AddReadMore() {
+                //This limit you can set after how much characters you want to show Read More.
+                var carLmt = 150;
+                // Text to show when text is collapsed
+                var readMoreTxt = " ... ";
+                // Text to show when text is expanded
+                var readLessTxt = "...";
+                //Traverse all selectors with this class and manupulate HTML part to show Read More
+                $(".addReadMore").each(function() {
+                    if ($(this).find(".firstSec").length)
+                        return;
+                    var allstr = $(this).text();
+                    if (allstr.length > carLmt) {
+                        var firstSet = allstr.substring(0, carLmt);
+                        var secdHalf = allstr.substring(carLmt, allstr.length);
+                        var strtoadd = firstSet + "<span class='SecSec'>" + secdHalf +
+                            "</span><span class='readMore'  title='Click to Show More'>" + readMoreTxt +
+                            "</span><span class='readLess' title='Click to Show Less'>" + readLessTxt + "</span>";
+                        $(this).html(strtoadd);
+                    }
+                });
+                //Read More and Read Less Click Event binding
+                $(document).on("click", ".readMore,.readLess", function() {
+                    $(this).closest(".addReadMore").toggleClass("showlesscontent showmorecontent");
+                });
+            }
+            $(function() {
+                //Calling function after Page Load
+                AddReadMore();
+            });
+        </script>
     @endsection

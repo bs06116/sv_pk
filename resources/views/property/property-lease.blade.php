@@ -96,41 +96,41 @@
                                 <div class="col-lg-6 text-right">
                                     <label class="col-lg-6 text-right" style="padding:10px 0px 10px;">Sort by:</label>
                                     <select name="" id="filter_select" class="inputCommon">
-                                         
+
                                         <option value="">Relevance</option>
                                         <option  @php if($filter=="lowest-price"){echo "selected"; } @endphp value="{{route('property-lease',['filter'=>'lowest-price'])}}">Lowest price</option>
                                         <option @php if($filter=="highest-price"){echo "selected"; } @endphp  value="{{route('property-lease',['filter'=>'highest-price'])}}">Highest price</option>
                                         <option @php if($filter=="most-recent"){echo "selected"; } @endphp   value="{{route('property-lease',['filter'=>'most-recent'])}}">Most Recent</option>
                                     </select>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                               
+
                                 @foreach ($cities as $seller)
 
 
                                     <div class="listCard">
                                         <div class="propertyImage">
-                                        
+
                                             <a>
                                                 <img src="{{ asset($seller->image) }}" alt="">
                                             </a>
-                                        
+
                                             @php
                                                          $count1=App\Models\Seller::where('id',$seller->id)->count();
                                                          $count2=App\Models\Gallery::where('seller_id',$seller->id)->count();
                                                          $sum=$count1+$count2
                                                     @endphp
 <span class="property-type" style="left: 250px;top: 13px;">{{ ucfirst($seller->type) }} </span>
- 
+
                                          <span class="tag"style="position: absolute; position: absolute;right: 242px;top: 14px;color: #0f0f0f;padding: 4px 15px;border-radius: 50px;font-size: 12px;text-transform: uppercase;background: #1010108f;"><a href=""> <i class="fa fa-camera" aria-hidden="true" style="color: #f9f9fb;">&nbsp;&nbsp;<b>{{ $sum }}</b>
-                                            
+
                                          </i></a>
-                                                  
+
                                          </span>
-                                   
+
                                         </div>
                                         <div class="propertyInfo" style="
     margin-top: -8px;
@@ -168,16 +168,16 @@
                                                 <span class="addReadMore showlesscontent" style="margin-top: -26px; margin-bottom: 35px;">
                                                 {{ ucfirst($seller->description) }}
                                                 </span>
-    </ul>                                            
-                                           
+    </ul>
+
                                             </div>
-                                          
-                                           
+
+
                                             <div class="listing-footer-wrapper">
                                                 <div class="listing-price">
                                                      @php
                                                             $converter = new App\Convertmodel();
-                                                            $price = $converter->numberTowords($seller->price)    
+                                                            $price = $converter->numberTowords($seller->price)
                                                         @endphp
                                                     <h4 class="list-pr">PKR:&nbsp;{{$price}}</h4>
                                                 </div>
@@ -190,6 +190,8 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                <?php echo $cities->links(); ?>
+
                             </div>
                         </div>
                     </div>
@@ -326,36 +328,36 @@
                         <ul class="list-unstyled list-cat">
                             @php
                                 $count = App\Models\Seller::where('type', '=', 'rent')->count();
-                                
+
                             @endphp
                             <li><a href="#">For Rent<span>{{ $count }}</span></a></li>
                             @php
                                 $count = App\Models\Seller::where('type', '=', 'sale')->count();
-                                
+
                             @endphp
                             <li><a href="#">For Sale <span>{{ $count }}</span> </a></li>
                             @php
                                 $count = App\Models\Seller::where('property', '=', 'commercial')->count();
-                                
+
                             @endphp
                             <li><a href="#">Commercial <span>{{ $count }}</span></a></li>
                             @php
                                 $count = App\Models\Seller::where('type', '=', 'lease')->count();
-                                
+
                             @endphp
                             <li><a href="#">Lease <span>{{ $count }}</span></a></li>
                             @php
                                 $count = App\Models\Seller::where('type', '=', 'land')->count();
-                                
+
                             @endphp
                             <li><a href="#">Land <span>{{ $count }}</span></a> </li>
                             @php
                                 $count = App\Models\Seller::all()->count();
-                                
+
                             @endphp
                             <li><a href="#">All Property <span>{{ $count }} </span></a></li>
                         </ul>
-                    
+
                             {{-- <h5 class="mb-3">Category</h5>
                             --}}
                             {{-- <ul class="list-unstyled list-cat">
@@ -389,7 +391,7 @@
             var carLmt = 150;
             // Text to show when text is collapsed
             var readMoreTxt = " ... ";
-            // Text to show when text is expanded   
+            // Text to show when text is expanded
             var readLessTxt = "...";
             //Traverse all selectors with this class and manupulate HTML part to show Read More
             $(".addReadMore").each(function() {

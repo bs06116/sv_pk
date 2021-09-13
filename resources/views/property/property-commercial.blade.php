@@ -93,7 +93,7 @@ i.fa.fa-camera {
 }
 #pagin li {
   display: inline-block;
-  
+
 }
 #pagin li a.current{
     text-align: center;
@@ -132,19 +132,19 @@ i.fa.fa-camera {
                                 <div class="col-lg-6">
                                     @php
                                     $count=App\Models\Seller::where('property','=','commercial')->count();
-                               
-                                      
+
+
 
 
                                     @endphp
                                     <h4>Total Properties:<span class="theme-cl">{{ $count }}</span></h4>
-                                    
+
                                 </div>
                                 <!--<h1>{{$filter}}</h1>-->
                                 <div class="col-lg-6 text-right">
                                     <label class="col-lg-6 text-right" style="padding:10px 0px 10px;">Sort by:</label>
                                     <select name="" id="filter_select" class="inputCommon">
-                                         
+
                                         <option value="">Relevance</option>
                                         <option  @php if($filter=="lowest-price"){echo "selected"; } @endphp value="{{route('property-commercial',['filter'=>'lowest-price'])}}">Lowest price</option>
                                         <option @php if($filter=="highest-price"){echo "selected"; } @endphp  value="{{route('property-commercial',['filter'=>'highest-price'])}}">Highest price</option>
@@ -155,15 +155,15 @@ i.fa.fa-camera {
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                              
+
                                 @foreach ($cities as $seller)
 
 
                                     <div class="listCard">
                                         <div class="propertyImage">
-                                           
+
                                             <a>
-                                              
+
                                                 <img src="{{ asset($seller->image) }}" alt="">
                                             </a>
                                             {{-- <div class="listing-like-top">
@@ -176,20 +176,20 @@ i.fa.fa-camera {
                                                 <i class="fa fa-star-o" aria-hidden="true"></i>
                                                 <i class="fa fa-star-o" aria-hidden="true"></i>
                                             </div> --}}
-                                            
+
                                               @php
                                                          $count1=App\Models\Seller::where('id',$seller->id)->count();
                                                          $count2=App\Models\Gallery::where('seller_id',$seller->id)->count();
                                                          $sum=$count1+$count2
                                                     @endphp
 <span class="property-type" style="left: 250px;top: 13px;">{{ ucfirst($seller->type) }} </span>
- 
+
                                          <span class="tag"style="position: absolute; position: absolute;right: 242px;top: 14px;color: #0f0f0f;padding: 4px 15px;border-radius: 50px;font-size: 12px;text-transform: uppercase;background: #1010108f;"><a href=""> <i class="fa fa-camera" aria-hidden="true" style="color: #f9f9fb;">&nbsp;&nbsp;<b>{{ $sum }}</b>
-                                            
+
                                          </i></a>
-                                                  
+
                                          </span>
-                                        
+
                                         </div>
                                        <div class="propertyInfo" style="
     margin-top: -8px;
@@ -199,7 +199,7 @@ i.fa.fa-camera {
                                                     <h4 class="listing-name">
                                                         <a href="{{ route('seller.show', $seller->id) }}">{{ ucfirst($seller->name) }}</a>
                                                     </h4>
-                                                
+
                                                     <span class="listing-location"><i
                                                             class="fa fa-map-marker"></i>{{ ucfirst($seller->address) }},
                                                         {{ ucfirst($seller->city) }}</span>
@@ -228,16 +228,16 @@ i.fa.fa-camera {
                                                 <span class="addReadMore showlesscontent" style="margin-top: -26px; margin-bottom: 35px;">
                                                {{ ucfirst($seller->description) }}
                                                 </span>
-    </ul>                                            
-                                           
+    </ul>
+
                                             </div>
-                                          
-                                           
+
+
                                             <div class="listing-footer-wrapper">
                                                 <div class="listing-price">
                                                      @php
                                         $converter = new App\Convertmodel();
-                                        $price = $converter->numberTowords($seller->price)    
+                                        $price = $converter->numberTowords($seller->price)
                                     @endphp
                                                     <h4 class="list-pr">PKR:&nbsp;{{$price}}</h4>
                                                 </div>
@@ -250,7 +250,8 @@ i.fa.fa-camera {
                                         </div>
                                     </div>
                                 @endforeach
-                                
+                                <?php echo $cities->links(); ?>
+
                             </div>
                         </div>
                     </div>
@@ -387,36 +388,36 @@ i.fa.fa-camera {
                         <ul class="list-unstyled list-cat">
                             @php
                                 $count = App\Models\Seller::where('type', '=', 'rent')->count();
-                                
+
                             @endphp
                             <li><a href="#">For Rent<span>{{ $count }}</span></a></li>
                             @php
                                 $count = App\Models\Seller::where('type', '=', 'sale')->count();
-                                
+
                             @endphp
                             <li><a href="#">For Sale <span>{{ $count }}</span> </a></li>
                             @php
                                 $count = App\Models\Seller::where('property', '=', 'commercial')->count();
-                                
+
                             @endphp
                             <li><a href="#">Commercial <span>{{ $count }}</span></a></li>
                             @php
                                 $count = App\Models\Seller::where('type', '=', 'lease')->count();
-                                
+
                             @endphp
                             <li><a href="#">Lease <span>{{ $count }}</span></a></li>
                             @php
                                 $count = App\Models\Seller::where('type', '=', 'land')->count();
-                                
+
                             @endphp
                             <li><a href="#">Land <span>{{ $count }}</span></a> </li>
                             @php
                                 $count = App\Models\Seller::all()->count();
-                                
+
                             @endphp
                             <li><a href="#">All Property <span>{{ $count }} </span></a></li>
                         </ul>
-                    
+
                             {{-- <h5 class="mb-3">Category</h5>
                             --}}
                             {{-- <ul class="list-unstyled list-cat">
@@ -444,14 +445,14 @@ i.fa.fa-camera {
               });
             });
         </script>
-        
+
  <script>
         function AddReadMore() {
             //This limit you can set after how much characters you want to show Read More.
             var carLmt = 150;
             // Text to show when text is collapsed
             var readMoreTxt = " ... ";
-            // Text to show when text is expanded   
+            // Text to show when text is expanded
             var readLessTxt = "...";
             //Traverse all selectors with this class and manupulate HTML part to show Read More
             $(".addReadMore").each(function() {
