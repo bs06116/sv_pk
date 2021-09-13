@@ -3216,7 +3216,10 @@ p.dayText.minText {
     left: 20px !important;
 }
 #header .nav .active a {
-    color: #BC985F;
-    border-radius: 5px;
-    margin-top: -9px !important;
+    background: #BC985F !important;
+    border-radius: 5px !important;
+    color:#fff !important;
+}
+#header .nav .active a:hover {
+    color:#fff !important;
 }
