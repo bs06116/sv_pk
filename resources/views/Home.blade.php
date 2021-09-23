@@ -1326,29 +1326,7 @@
         </div>
     </div>
 </div>
-<!-- Modal -->
-{{-- <div id="application_form_popup" class="modal fade" role="dialog">
-  <div class="modal-dialog left-0">
 
-    <!-- Modal content-->
-    <div class="modal-content bg-gredient-black">
-      <div class="modal-header">
-        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title text-white text-center">Application Forms</h4>
-      </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-md-6 px-md-30">
-                    <a href="{{url('/application_form?application=plots_house')}}" class="bg-theme-brown form-modal-button text-decoration-none">Aplication Form plots and house</a>
-                </div>
-                <div class="col-md-6 mt-xs-20 px-md-30 border-skew-md position-static">
-                    <a href="{{url('/application_form?application=form_investment')}}" class="bg-theme-brown form-modal-button text-decoration-none">Aplication Form Investment</a>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-</div> --}}
 <script src="{{asset('new/assets/js/app.js')}}"></script>
   <script src="{{asset('new/toastr/toastr.min.js')}}"></script>
 

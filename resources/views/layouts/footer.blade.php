@@ -5,7 +5,7 @@
               <a>
                   <img class="footer-logo" src="{{asset('assets/img/fff.png')}}" alt="">
               </a>
-             <p>ShinnyView is the leading Property Market place in Pakistan. We are confident 
+             <p>ShinnyView is the leading Property Market place in Pakistan. We are confident
                  that we will save your time and money through trusted agents and buyers throughout
                   Pakistan. ShinnyView is an ultimate Buying and Selling place for all type of properties,
                    residential, commercial, leasing or renting, along with individual buyers, sellers.</p>
@@ -29,7 +29,7 @@
                   <li><a href="#"><i> <span style="color: #bc985f;" class="fa fa-phone" aria-hidden="true"></span></i>  0330-6969698</a></li>
                   <li><a href="#"><i> <span style="color: #bc985f;"  class="fa fa-server" aria-hidden="true"></span></i>  www.shinnyview.com</a></li>
               </ul>
-          </div> 
+          </div>
              <div class="col-lg-3">
               <h4>Join Us</h4>
               <a href="https://www.facebook.com/ShinnyView.PK">
@@ -56,13 +56,11 @@
                   <img class="bar-new" style="width:128px;" src="{{asset('assets/img/applestore.png')}}" alt="">
 
               </div>
-              <div class="col-lg-3">
-                <img class="bar-new" src="{{asset('assets/img/bar.jpeg')}}" alt="">
-                </div
+
       </div>
-      
+
   </div>
- 
+
 
 {{-- <script src="{{ asset('assets/js/slick.js') }}"></script> --}}
 

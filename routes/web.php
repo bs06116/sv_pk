@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
-
+Route::get('/', function () {
+    return view('Home');
+});
 Route::post('/search_home', 'SellerController@search_home')->name('search_home');
 Route::post('/lease_search', 'SellerController@lease')->name('lease_search');
 
@@ -84,9 +86,7 @@ Route::post('user/forgot', 'ForgotController@sendVerification')->name('userforgo
 Route::post('reset/password', 'ForgotController@resetPassword')->name('resetuser');
 Route::get('city/{city}', 'SellerController@city')->name('city');
 //front page route list  menu bar
-Route::get('/', function () {
-    return view('Home');
-});
+
 Route::get('/property-list', function () {
     return view('property-list');
 });
