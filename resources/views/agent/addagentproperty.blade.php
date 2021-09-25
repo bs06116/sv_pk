@@ -342,7 +342,7 @@ style="color: #83693b; text-align: center;display: none;">For main banner Advert
 <!--    </a>-->
 <!--</li>-->
  <li>
-    <h5><span style="color:white;font-size:25px"> &nbsp Free Trial</span></h5>
+    <h5><span style="color:white;font-size:25px"> &nbsp Basic</span></h5>
 <p><span style="color:#8a6d3b;font-size:25px ">&nbsp Current Plan</span></p>
 </li>
   <button class="infoTexts" style="

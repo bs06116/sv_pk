@@ -295,7 +295,7 @@
                             <!--    </a>-->
                             <!--</li>-->
                             <li>
-                                <h5><span style="color:white;font-size:25px"> &nbsp Free Trial</span></h5>
+                                <h5><span style="color:white;font-size:25px"> &nbsp Basic Package</span></h5>
                                 <p><span style="color:#8a6d3b;font-size:25px ">&nbsp Current Plan</span></p>
                             </li>
                             <button class="infoTexts" style="

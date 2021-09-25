@@ -61,7 +61,7 @@ class SellerController extends Controller
             $user->save();
         }
 
-        if ($diff <= 30) {
+       // if ($diff <= 30) {
 
             $ads = seller::where('user_id', $id)->where('updated_at', '<=', $end_date)->where('updated_at', '>=', $start_date)->count();
 
@@ -258,11 +258,11 @@ class SellerController extends Controller
                 toastr()->error('Your Package in completly used Please upgrade your package');
                 return redirect()->back();
             }
-        } else {
+        // } else {
 
-            toastr()->error('Your package is expired Please renew it for furthur use.');
-            return redirect()->back();
-        }
+        //     toastr()->error('Your package is expired Please renew it for furthur use.');
+        //     return redirect()->back();
+        // }
 
         }catch(\Exception $e){
             \Log::error($e);
